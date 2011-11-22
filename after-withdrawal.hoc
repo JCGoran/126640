@@ -1,0 +1,88 @@
+load_file("nrngui.hoc")
+cvode_active(1)
+
+numsyn=216
+numstim=1000
+objref syn[numsyn], stim[numsyn], nc[numsyn], rs, rd, rf, apc, count, curr
+strdef dirstr
+
+load_file("all_tau_vecs.hoc")
+Vrest = -90
+dt = 0.08
+gna = 0.25
+gk = 0.003
+gka = 0.003
+gkrp=0.003
+weight=0.15
+celsius = 35.0  
+
+Cm    = 1
+Rm = 7000/Cm
+
+RaAll= 150
+
+tstop=4000
+
+use_mcell_ran4()
+mcell_ran4_init()
+rs = new Random()
+rs.uniform(0,numsyn-1)
+rs.MCellRan4(6577219543)
+rd = new Random()
+rd.MCellRan4(6577219543)
+rd.uniform(0,250)
+
+load_file("soma17.hoc")
+load_file("fixnseg.hoc")
+
+forall {
+	insert pas e_pas=Vrest g_pas=1/Rm Ra=RaAll cm=Cm
+	insert naf gnabar_naf=gna
+	insert kaf gkbar_kaf=gka
+	insert kas gkbar_kas = gk
+	insert krp gkbar_krp = gkrp
+}
+
+geom_nseg()
+
+for k=0,numsyn-1 dend_9[k] {
+	syn[k] = new Exp2Syn(.5)
+	syn[k].e=0
+	syn[k].tau1=0.5
+	syn[k].tau2=3
+
+	stim[k]=new NetStimd(.5)
+	stim[k].start=rd.repick()
+	stim[k].number=10000
+	stim[k].interv1=1000/3   
+	stim[k].interv2=1000/40   
+	stim[k].swd=1000   
+	stim[k].swu=400   
+	stim[k].noise=1
+
+	nc[k]=new NetCon(stim[k], syn[k],0,0,weight*1e-3)	
+		
+}
+
+proc init() {
+	finitialize(Vrest)
+        fcurrent()
+	finitialize(Vrest)
+        forall for(x) {e_pas(x)=v(x)+(ina(x)+ik(x))/g_pas(x)}
+	cvode.re_init()
+}
+
+
+load_file("after.ses")
+
+proc off() {
+	for kk=0,numsyn-1 {nc[kk].weight=weight*1.e-3*1.09}	
+	for kk=1,72 {
+		dummy=int(rs.repick())
+		while (nc[dummy].weight==0) {dummy=int(rs.repick())}
+		dummy2=nc[dummy].weight
+		nc[dummy].weight=0
+		dend_9[dummy] disconnect()
+	}	
+	run()
+}

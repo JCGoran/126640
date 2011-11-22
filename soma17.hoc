@@ -1,0 +1,2515 @@
+proc celldef() {
+  topol()
+  geom()
+  geom_nseg()
+}
+
+create soma[4], dend[11], dend_6[160], dend_9[216], apic[103], dend_5[51], dend_7[8]
+create axon
+
+proc topol() { local i
+  for i = 1, 3 connect soma[i](0), soma[i-1](1)
+  connect dend(0), soma[3](1)
+  for i = 1, 3 connect dend[i](0), dend_6[i-1](1)
+  for i = 4, 5 connect dend[i](0), soma[i-3](1)
+  for i = 6, 9 connect dend[i](0), dend_6[i+130](1)
+  connect dend[10](0), dend_6[148](1)
+  for i = 0, 3 connect dend_6[i](0), dend[i](1)
+  for i = 4, 35 connect dend_6[i](0), apic[i-4](1)
+  for i = 36, 50 connect dend_6[i](0), dend_5[i-36](1)
+  for i = 51, 58 connect dend_6[i](0), dend_5[i-35](1)
+  for i = 59, 72 connect dend_6[i](0), apic[i-27](1)
+  for i = 73, 97 connect dend_6[i](0), dend_5[i-48](1)
+  for i = 98, 135 connect dend_6[i](0), apic[i-52](1)
+  for i = 136, 140 connect dend_6[i](0), dend[i-131](1)
+  for i = 141, 148 connect dend_6[i](0), apic[i-56](1)
+  connect dend_6[149](0), dend[10](1)
+  for i = 150, 159 connect dend_6[i](0), apic[i-57](1)
+  for i = 0, 1 connect dend_9[i](0), dend_6(1)
+  for i = 2, 3 connect dend_9[i](0), dend_6[1](1)
+  connect dend_9[4](0), dend_6[2](1)
+  for i = 5, 6 connect dend_9[i](0), dend_6[4](1)
+  for i = 7, 9 connect dend_9[i](0), dend_6[i-2](1)
+  for i = 10, 11 connect dend_9[i](0), dend_6[7](1)
+  for i = 12, 15 connect dend_9[i](0), dend_6[i-4](1)
+  for i = 16, 17 connect dend_9[i](0), dend_6[i-5](1)
+  for i = 18, 21 connect dend_9[i](0), dend_6[i-6](1)
+  for i = 22, 23 connect dend_9[i](0), dend_6[i-7](1)
+  for i = 24, 26 connect dend_9[i](0), dend_6[i-8](1)
+  for i = 27, 28 connect dend_9[i](0), dend_6[i-9](1)
+  for i = 29, 31 connect dend_9[i](0), dend_6[i-10](1)
+  for i = 32, 39 connect dend_9[i](0), dend_6[i-11](1)
+  for i = 40, 42 connect dend_9[i](0), dend_6[i-12](1)
+  for i = 43, 44 connect dend_9[i](0), dend_6[i-13](1)
+  connect dend_9[45](0), apic[28](1)
+  for i = 46, 50 connect dend_9[i](0), dend_6[i-13](1)
+  connect dend_9[51](0), dend_6[37](1)
+  connect dend_9[52](0), dend_5[2](1)
+  for i = 53, 54 connect dend_9[i](0), dend_6[i-14](1)
+  for i = 55, 56 connect dend_9[i](0), dend_6[i-15](1)
+  for i = 57, 58 connect dend_9[i](0), dend_6[i-16](1)
+  for i = 59, 60 connect dend_9[i](0), dend_6[i-17](1)
+  for i = 61, 62 connect dend_9[i](0), dend_6[43](1)
+  for i = 63, 78 connect dend_9[i](0), dend_6[i-19](1)
+  for i = 79, 80 connect dend_9[i](0), dend_6[i-20](1)
+  for i = 81, 82 connect dend_9[i](0), dend_6[i-21](1)
+  for i = 83, 84 connect dend_9[i](0), dend_6[61](1)
+  for i = 85, 86 connect dend_9[i](0), dend_6[i-23](1)
+  for i = 87, 88 connect dend_9[i](0), dend_6[i-24](1)
+  for i = 89, 91 connect dend_9[i](0), dend_6[i-25](1)
+  for i = 92, 93 connect dend_9[i](0), dend_6[i-26](1)
+  for i = 94, 97 connect dend_9[i](0), dend_6[i-27](1)
+  for i = 98, 99 connect dend_9[i](0), dend_6[i-28](1)
+  connect dend_9[100](0), dend_6[71](1)
+  for i = 101, 102 connect dend_9[i](0), dend_6[73](1)
+  for i = 103, 104 connect dend_9[i](0), dend_6[74](1)
+  for i = 105, 110 connect dend_9[i](0), dend_6[i-30](1)
+  for i = 111, 115 connect dend_9[i](0), dend_6[i-31](1)
+  for i = 116, 117 connect dend_9[i](0), dend_6[84](1)
+  for i = 118, 119 connect dend_9[i](0), dend_6[85](1)
+  for i = 120, 124 connect dend_9[i](0), dend_6[i-34](1)
+  for i = 125, 126 connect dend_9[i](0), dend_6[i-35](1)
+  for i = 127, 129 connect dend_9[i](0), dend_6[i-36](1)
+  for i = 130, 131 connect dend_9[i](0), dend_6[i-37](1)
+  for i = 132, 133 connect dend_9[i](0), dend_6[i-38](1)
+  for i = 134, 141 connect dend_9[i](0), dend_6[i-39](1)
+  for i = 142, 146 connect dend_9[i](0), dend_6[i-40](1)
+  for i = 147, 149 connect dend_9[i](0), dend_6[i-41](1)
+  for i = 150, 163 connect dend_9[i](0), dend_6[i-42](1)
+  for i = 164, 165 connect dend_9[i](0), dend_6[121](1)
+  for i = 166, 167 connect dend_9[i](0), dend_6[i-44](1)
+  connect dend_9[168](0), apic[72](1)
+  for i = 169, 175 connect dend_9[i](0), dend_6[i-45](1)
+  for i = 176, 178 connect dend_9[i](0), dend_6[i-46](1)
+  for i = 179, 180 connect dend_9[i](0), dend_6[i-47](1)
+  for i = 181, 183 connect dend_9[i](0), dend_6[i-48](1)
+  for i = 184, 188 connect dend_9[i](0), dend_6[i-49](1)
+  for i = 189, 191 connect dend_9[i](0), dend_6[i-48](1)
+  for i = 192, 193 connect dend_9[i](0), dend_6[143](1)
+  for i = 194, 195 connect dend_9[i](0), dend_6[i-50](1)
+  for i = 196, 197 connect dend_9[i](0), dend_6[i-51](1)
+  for i = 198, 199 connect dend_9[i](0), apic[91](1)
+  for i = 200, 201 connect dend_9[i](0), dend_6[i-52](1)
+  for i = 202, 203 connect dend_9[i](0), dend_6[i-53](1)
+  for i = 204, 205 connect dend_9[i](0), dend_6[i-54](1)
+  connect dend_9[206](0), apic[95](1)
+  for i = 207, 210 connect dend_9[i](0), dend_6[i-54](1)
+  for i = 211, 213 connect dend_9[i](0), dend_6[i-55](1)
+  for i = 214, 215 connect dend_9[i](0), dend_6[i-56](1)
+  for i = 0, 28 connect apic[i](0), dend_6[i+3](1)
+  connect apic[29](0), apic[28](1)
+  for i = 30, 31 connect apic[i](0), dend_6[i+3](1)
+  connect apic[32](0), apic(1)
+  for i = 33, 45 connect apic[i](0), dend_6[i+26](1)
+  connect apic[46](0), dend[4](1)
+  for i = 47, 69 connect apic[i](0), dend_6[i+51](1)
+  connect apic[70](0), dend[4](1)
+  for i = 71, 84 connect apic[i](0), dend_6[i+51](1)
+  for i = 85, 91 connect apic[i](0), dend_6[i+55](1)
+  connect apic[92](0), apic[91](1)
+  connect apic[93](0), dend_6[149](1)
+  connect apic[94](0), dend_6[140](1)
+  connect apic[95](0), dend_6[151](1)
+  connect apic[96](0), apic[95](1)
+  for i = 97, 102 connect apic[i](0), dend_6[i+56](1)
+  for i = 0, 2 connect dend_5[i](0), dend_6[i+35](1)
+  connect dend_5[3](0), dend_5[2](1)
+  for i = 4, 15 connect dend_5[i](0), dend_6[i+35](1)
+  connect dend_5[16](0), dend_5(1)
+  for i = 17, 24 connect dend_5[i](0), dend_6[i+34](1)
+  for i = 25, 37 connect dend_5[i](0), dend_6[i+47](1)
+  connect dend_5[38](0), dend_6[72](1)
+  for i = 39, 50 connect dend_5[i](0), dend_6[i+47](1)
+  connect dend_7(0), dend_5[15](1)
+  connect dend_7[1](0), dend_5[24](1)
+  connect dend_7[2](0), dend_6[85](1)
+  connect dend_7[3](0), dend_5[50](1)
+  connect dend_7[4](0), dend_6[121](1)
+  connect dend_7[5](0), apic[84](1)
+  connect dend_7[6](0), dend_6[150](1)
+  connect dend_7[7](0), dend_6[159](1)
+  connect axon(0), soma(1)
+  basic_shape()
+}
+proc shape3d_1() {
+  soma {pt3dclear()
+	pt3dadd(105.2, 95.95, 8.5, 2.8)
+	pt3dadd(104.1, 95.3, 8.5, 9.96)
+  }
+  soma[1] {pt3dclear()
+	pt3dadd(104.1, 95.3, 8.5, 9.96)
+	pt3dadd(102.58, 94.475, 8.5, 13.08)
+	pt3dadd(99.7, 93.05, 8.5, 14.54)
+  }
+  soma[2] {pt3dclear()
+	pt3dadd(99.7, 93.05, 8.5, 14.54)
+	pt3dadd(97.325, 91.75, 8.5, 12.22)
+  }
+  soma[3] {pt3dclear()
+	pt3dadd(97.325, 91.75, 8.5, 12.22)
+	pt3dadd(95.556, 90.756, 8.5, 8.84)
+	pt3dadd(93.55, 89.75, 8.5, 2.24)
+  }
+  dend {pt3dclear()
+	pt3dadd(93.55, 89.75, 8.5, 2.14)
+	pt3dadd(88.65, 87.75, 8.5, 2.14)
+	pt3dadd(85.8, 86.9, 9.5, 2.3)
+  }
+  dend_6 {pt3dclear()
+	pt3dadd(85.8, 86.9, 9.5, 2.3)
+	pt3dadd(85.5, 86.8, 9.5, 2.52)
+  }
+  dend_9 {pt3dclear()
+	pt3dadd(85.5, 86.8, 9.5, 2.52)
+	pt3dadd(86, 89.2, 9.5, 0.7)
+  }
+  dend_9[1] {pt3dclear()
+	pt3dadd(85.5, 86.8, 9.5, 2.52)
+	pt3dadd(85.2, 89.2, 9.5, 0.5)
+  }
+  dend[1] {pt3dclear()
+	pt3dadd(85.5, 86.8, 9.5, 2.52)
+	pt3dadd(85.1, 86.8, 9.5, 2.62)
+	pt3dadd(81.1, 86, 10, 1.04)
+  }
+  dend_6[1] {pt3dclear()
+	pt3dadd(81.1, 86, 10, 1.04)
+	pt3dadd(80.9, 85.9, 10, 1.28)
+  }
+  dend_9[2] {pt3dclear()
+	pt3dadd(80.9, 85.9, 10, 1.28)
+	pt3dadd(81.5, 84.5, 9, 0.36)
+  }
+  dend_9[3] {pt3dclear()
+	pt3dadd(80.9, 85.9, 10, 1.28)
+	pt3dadd(80.7, 87.4, 11.5, 0.24)
+  }
+  dend[2] {pt3dclear()
+	pt3dadd(80.9, 85.9, 10, 1.28)
+	pt3dadd(80.6, 86, 11, 1.58)
+	pt3dadd(77.6, 85.4, 11, 1.8)
+	pt3dadd(75, 83.1, 11, 1.6)
+  }
+  dend_6[2] {pt3dclear()
+	pt3dadd(75, 83.1, 11, 1.6)
+	pt3dadd(74.8, 83, 11, 1.8)
+  }
+  dend_9[4] {pt3dclear()
+	pt3dadd(74.8, 83, 11, 1.8)
+	pt3dadd(75.9, 81.8, 11, 0.9)
+  }
+  dend[3] {pt3dclear()
+	pt3dadd(74.8, 83, 11, 1.8)
+	pt3dadd(74.4, 82.9, 11, 1.6)
+  }
+  dend_6[3] {pt3dclear()
+	pt3dadd(74.4, 82.9, 11, 1.6)
+	pt3dadd(73.2, 81.9, 10.5, 2.02)
+  }
+  apic {pt3dclear()
+	pt3dadd(73.2, 81.9, 10.5, 2.02)
+	pt3dadd(72.9, 81.3, 10.5, 1.46)
+  }
+  dend_6[4] {pt3dclear()
+	pt3dadd(72.9, 81.3, 10.5, 1.46)
+	pt3dadd(72.7, 81, 10.5, 1.34)
+  }
+  dend_9[5] {pt3dclear()
+	pt3dadd(72.7, 81, 10.5, 1.34)
+	pt3dadd(74.3, 79.9, 10.5, 0.36)
+  }
+  dend_9[6] {pt3dclear()
+	pt3dadd(72.7, 81, 10.5, 1.34)
+	pt3dadd(73.7, 78.9, 10.5, 0.36)
+  }
+  apic[1] {pt3dclear()
+	pt3dadd(72.7, 81, 10.5, 1.34)
+	pt3dadd(72.3, 80.5, 10.5, 1.06)
+	pt3dadd(71.7, 80, 10, 0.9)
+  }
+  dend_6[5] {pt3dclear()
+	pt3dadd(71.7, 80, 10, 0.9)
+	pt3dadd(71.6, 79.8, 10, 1.12)
+  }
+  dend_9[7] {pt3dclear()
+	pt3dadd(71.6, 79.8, 10, 1.12)
+	pt3dadd(72.6, 79.1, 10, 0.24)
+  }
+  apic[2] {pt3dclear()
+	pt3dadd(71.6, 79.8, 10, 1.12)
+	pt3dadd(71.3, 79.5, 10, 0.8)
+	pt3dadd(71.1, 78.4, 9.5, 0.76)
+  }
+  dend_6[6] {pt3dclear()
+	pt3dadd(71.1, 78.4, 9.5, 0.76)
+	pt3dadd(71.1, 78.2, 9.5, 0.76)
+  }
+  dend_9[8] {pt3dclear()
+	pt3dadd(71.1, 78.2, 9.5, 0.76)
+	pt3dadd(73.2, 78.4, 8.5, 0.5)
+  }
+  apic[3] {pt3dclear()
+	pt3dadd(71.1, 78.2, 9.5, 0.76)
+	pt3dadd(71, 77.9, 9.5, 1.04)
+	pt3dadd(70.1, 75.1, 9, 0.8)
+  }
+  dend_6[7] {pt3dclear()
+	pt3dadd(70.1, 75.1, 9, 0.8)
+	pt3dadd(70, 74.8, 9, 1.12)
+  }
+  dend_9[9] {pt3dclear()
+	pt3dadd(70, 74.8, 9, 1.12)
+	pt3dadd(71.6, 74.7, 10, 0.24)
+  }
+  dend_9[10] {pt3dclear()
+	pt3dadd(70, 74.8, 9, 1.12)
+	pt3dadd(68.1, 76.3, 10, 0.36)
+  }
+  dend_9[11] {pt3dclear()
+	pt3dadd(70, 74.8, 9, 1.12)
+	pt3dadd(71.8, 72.9, 10.5, 0.24)
+  }
+  apic[4] {pt3dclear()
+	pt3dadd(70, 74.8, 9, 1.12)
+	pt3dadd(69.9, 74.4, 9, 1.34)
+	pt3dadd(69, 72.9, 9.5, 0.9)
+  }
+  dend_6[8] {pt3dclear()
+	pt3dadd(69, 72.9, 9.5, 0.9)
+	pt3dadd(68.8, 72.7, 9.5, 1.24)
+  }
+  dend_9[12] {pt3dclear()
+	pt3dadd(68.8, 72.7, 9.5, 1.24)
+	pt3dadd(67.6, 73.9, 9.5, 0.24)
+  }
+  apic[5] {pt3dclear()
+	pt3dadd(68.8, 72.7, 9.5, 1.24)
+	pt3dadd(68.7, 72.5, 9.5, 1.06)
+	pt3dadd(68, 71.8, 9.5, 0.7)
+	pt3dadd(67.8, 71.4, 9.5, 1.12)
+  }
+  dend_6[9] {pt3dclear()
+	pt3dadd(67.8, 71.4, 9.5, 1.12)
+	pt3dadd(67.6, 71.2, 9.5, 1.12)
+  }
+  dend_9[13] {pt3dclear()
+	pt3dadd(67.6, 71.2, 9.5, 1.12)
+	pt3dadd(68.5, 70.5, 10, 0.36)
+  }
+  apic[6] {pt3dclear()
+	pt3dadd(67.6, 71.2, 9.5, 1.12)
+	pt3dadd(67.4, 71, 9.5, 1.12)
+  }
+  dend_6[10] {pt3dclear()
+	pt3dadd(67.4, 71, 9.5, 1.12)
+	pt3dadd(67.1, 70.7, 9.5, 1.46)
+  }
+  dend_9[14] {pt3dclear()
+	pt3dadd(67.1, 70.7, 9.5, 1.46)
+	pt3dadd(67.7, 69.6, 10.5, 0.24)
+  }
+  apic[7] {pt3dclear()
+	pt3dadd(67.1, 70.7, 9.5, 1.46)
+	pt3dadd(66.8, 70.5, 9.5, 1.24)
+	pt3dadd(65.8, 69.2, 9.5, 1.12)
+	pt3dadd(64.9, 67.4, 10, 0.9)
+  }
+  dend_6[11] {pt3dclear()
+	pt3dadd(64.9, 67.4, 10, 0.9)
+	pt3dadd(64.6, 67.2, 10, 1.12)
+  }
+  dend_9[15] {pt3dclear()
+	pt3dadd(64.6, 67.2, 10, 1.12)
+	pt3dadd(67.4, 66.5, 10, 0.24)
+  }
+  dend_9[16] {pt3dclear()
+	pt3dadd(64.6, 67.2, 10, 1.12)
+	pt3dadd(63.3, 68.7, 10.5, 0.36)
+  }
+  apic[8] {pt3dclear()
+	pt3dadd(64.6, 67.2, 10, 1.12)
+	pt3dadd(64.4, 67, 10, 1.12)
+	pt3dadd(63.9, 64.8, 9.5, 0.76)
+	pt3dadd(64.1, 63.6, 7.5, 0.9)
+  }
+  dend_6[12] {pt3dclear()
+	pt3dadd(64.1, 63.6, 7.5, 0.9)
+	pt3dadd(64.3, 63.3, 7.5, 1.46)
+  }
+  dend_9[17] {pt3dclear()
+	pt3dadd(64.3, 63.3, 7.5, 1.46)
+	pt3dadd(65.8, 63.5, 7.5, 0.24)
+  }
+  dend_9[18] {pt3dclear()
+	pt3dadd(64.3, 63.3, 7.5, 1.46)
+	pt3dadd(65.3, 64.1, 7.5, 0.36)
+  }
+  apic[9] {pt3dclear()
+	pt3dadd(64.3, 63.3, 7.5, 1.46)
+	pt3dadd(64.4, 62.9, 7.5, 1.04)
+	pt3dadd(64.6, 62.1, 8, 0.56)
+  }
+  dend_6[13] {pt3dclear()
+	pt3dadd(64.6, 62.1, 8, 0.56)
+	pt3dadd(64.5, 61.7, 8, 0.8)
+  }
+  dend_9[19] {pt3dclear()
+	pt3dadd(64.5, 61.7, 8, 0.8)
+	pt3dadd(63.8, 61.5, 7.5, 0.24)
+  }
+  apic[10] {pt3dclear()
+	pt3dadd(64.5, 61.7, 8, 0.8)
+	pt3dadd(64.8, 61.4, 8, 0.5)
+	pt3dadd(65.1, 60.7, 7.5, 0.8)
+  }
+  dend_6[14] {pt3dclear()
+	pt3dadd(65.1, 60.7, 7.5, 0.8)
+	pt3dadd(65.1, 60.5, 7.5, 0.8)
+  }
+  dend_9[20] {pt3dclear()
+	pt3dadd(65.1, 60.5, 7.5, 0.8)
+	pt3dadd(65.6, 60.5, 8.5, 0.24)
+  }
+  apic[11] {pt3dclear()
+	pt3dadd(65.1, 60.5, 7.5, 0.8)
+	pt3dadd(65.2, 60.2, 7.5, 1.12)
+	pt3dadd(65.1, 59.5, 7, 0.8)
+  }
+  dend_6[15] {pt3dclear()
+	pt3dadd(65.1, 59.5, 7, 0.8)
+	pt3dadd(65.2, 59.2, 7, 1)
+  }
+  dend_9[21] {pt3dclear()
+	pt3dadd(65.2, 59.2, 7, 1)
+	pt3dadd(66, 59.2, 8, 0.5)
+  }
+  dend_9[22] {pt3dclear()
+	pt3dadd(65.2, 59.2, 7, 1)
+	pt3dadd(64.2, 59.1, 6.5, 0.24)
+  }
+  apic[12] {pt3dclear()
+	pt3dadd(65.2, 59.2, 7, 1)
+	pt3dadd(65, 58.9, 7, 1.04)
+	pt3dadd(64.9, 58, 6, 0.9)
+  }
+  dend_6[16] {pt3dclear()
+	pt3dadd(64.9, 58, 6, 0.9)
+	pt3dadd(64.8, 57.7, 6, 1.24)
+  }
+  dend_9[23] {pt3dclear()
+	pt3dadd(64.8, 57.7, 6, 1.24)
+	pt3dadd(65.8, 57.3, 6.5, 0.24)
+  }
+  dend_9[24] {pt3dclear()
+	pt3dadd(64.8, 57.7, 6, 1.24)
+	pt3dadd(64.2, 58.3, 5.5, 0.24)
+  }
+  apic[13] {pt3dclear()
+	pt3dadd(64.8, 57.7, 6, 1.24)
+	pt3dadd(64.6, 57.3, 6, 1.24)
+	pt3dadd(64.1, 56.4, 5.5, 0.9)
+  }
+  dend_6[17] {pt3dclear()
+	pt3dadd(64.1, 56.4, 5.5, 0.9)
+	pt3dadd(64, 56.2, 5.5, 1.12)
+  }
+  dend_9[25] {pt3dclear()
+	pt3dadd(64, 56.2, 5.5, 1.12)
+	pt3dadd(63.4, 56.1, 4, 0.24)
+  }
+  apic[14] {pt3dclear()
+	pt3dadd(64, 56.2, 5.5, 1.12)
+	pt3dadd(63.7, 55.8, 5.5, 0.9)
+  }
+  dend_6[18] {pt3dclear()
+	pt3dadd(63.7, 55.8, 5.5, 0.9)
+	pt3dadd(63.6, 55.5, 5, 1.24)
+  }
+  dend_9[26] {pt3dclear()
+	pt3dadd(63.6, 55.5, 5, 1.24)
+	pt3dadd(64.5, 54.5, 5, 0.36)
+  }
+  dend_9[27] {pt3dclear()
+	pt3dadd(63.6, 55.5, 5, 1.24)
+	pt3dadd(64.9, 55.3, 5, 0.36)
+  }
+  apic[15] {pt3dclear()
+	pt3dadd(63.6, 55.5, 5, 1.24)
+	pt3dadd(63.4, 55.2, 5, 1.12)
+	pt3dadd(63, 54.6, 5, 1.12)
+  }
+  dend_6[19] {pt3dclear()
+	pt3dadd(63, 54.6, 5, 1.12)
+	pt3dadd(62.9, 54.4, 5, 1.34)
+  }
+  dend_9[28] {pt3dclear()
+	pt3dadd(62.9, 54.4, 5, 1.34)
+	pt3dadd(61.4, 54.9, 5, 0.24)
+  }
+  dend_9[29] {pt3dclear()
+	pt3dadd(62.9, 54.4, 5, 1.34)
+	pt3dadd(61.7, 54, 5, 0.56)
+  }
+  apic[16] {pt3dclear()
+	pt3dadd(62.9, 54.4, 5, 1.34)
+	pt3dadd(62.8, 53.9, 5, 1.04)
+	pt3dadd(62.6, 52.2, 5, 1)
+	pt3dadd(62.4, 50.6, 5, 1)
+  }
+  dend_6[20] {pt3dclear()
+	pt3dadd(62.4, 50.6, 5, 1)
+	pt3dadd(62.4, 50.4, 5, 1)
+  }
+  dend_9[30] {pt3dclear()
+	pt3dadd(62.4, 50.4, 5, 1)
+	pt3dadd(61.2, 50.3, 5, 0.24)
+  }
+  apic[17] {pt3dclear()
+	pt3dadd(62.4, 50.4, 5, 1)
+	pt3dadd(62.4, 50.2, 5, 1)
+  }
+  dend_6[21] {pt3dclear()
+	pt3dadd(62.4, 50.2, 5, 1)
+	pt3dadd(62.5, 49.8, 5, 0.76)
+  }
+  dend_9[31] {pt3dclear()
+	pt3dadd(62.5, 49.8, 5, 0.76)
+	pt3dadd(63.2, 49.7, 5, 0.24)
+  }
+  dend_9[32] {pt3dclear()
+	pt3dadd(62.5, 49.8, 5, 0.76)
+	pt3dadd(61.2, 49.5, 5, 0.24)
+  }
+  apic[18] {pt3dclear()
+	pt3dadd(62.5, 49.8, 5, 0.76)
+	pt3dadd(62.4, 49.5, 5, 0.56)
+	pt3dadd(62.7, 48.3, 5, 0.8)
+  }
+  dend_6[22] {pt3dclear()
+	pt3dadd(62.7, 48.3, 5, 0.8)
+	pt3dadd(62.7, 48.1, 5, 0.8)
+  }
+  dend_9[33] {pt3dclear()
+	pt3dadd(62.7, 48.1, 5, 0.8)
+	pt3dadd(63.8, 48.5, 4.5, 0.24)
+  }
+  apic[19] {pt3dclear()
+	pt3dadd(62.7, 48.1, 5, 0.8)
+	pt3dadd(62.7, 47.9, 5, 0.8)
+	pt3dadd(62.9, 46.9, 4.5, 1.28)
+  }
+  dend_6[23] {pt3dclear()
+	pt3dadd(62.9, 46.9, 4.5, 1.28)
+	pt3dadd(62.9, 46.7, 4.5, 1.28)
+  }
+  dend_9[34] {pt3dclear()
+	pt3dadd(62.9, 46.7, 4.5, 1.28)
+	pt3dadd(64.2, 47.1, 5, 0.24)
+  }
+}
+proc shape3d_2() {
+  dend_9[34] {  }
+  apic[20] {pt3dclear()
+	pt3dadd(62.9, 46.7, 4.5, 1.28)
+	pt3dadd(62.9, 46.5, 4.5, 1.28)
+	pt3dadd(63, 45.8, 5, 1)
+  }
+  dend_6[24] {pt3dclear()
+	pt3dadd(63, 45.8, 5, 1)
+	pt3dadd(63, 45.6, 5, 1)
+  }
+  dend_9[35] {pt3dclear()
+	pt3dadd(63, 45.6, 5, 1)
+	pt3dadd(64.8, 45.7, 5, 0.24)
+  }
+  apic[21] {pt3dclear()
+	pt3dadd(63, 45.6, 5, 1)
+	pt3dadd(62.9, 45.4, 5, 0.76)
+	pt3dadd(62.7, 43.3, 5, 0.8)
+  }
+  dend_6[25] {pt3dclear()
+	pt3dadd(62.7, 43.3, 5, 0.8)
+	pt3dadd(62.5, 43, 5, 0.9)
+  }
+  dend_9[36] {pt3dclear()
+	pt3dadd(62.5, 43, 5, 0.9)
+	pt3dadd(63.3, 42.7, 5.5, 0.36)
+  }
+  apic[22] {pt3dclear()
+	pt3dadd(62.5, 43, 5, 0.9)
+	pt3dadd(62.4, 42.8, 5.5, 0.7)
+  }
+  dend_6[26] {pt3dclear()
+	pt3dadd(62.4, 42.8, 5.5, 0.7)
+	pt3dadd(62.3, 42.5, 5.5, 1.06)
+  }
+  dend_9[37] {pt3dclear()
+	pt3dadd(62.3, 42.5, 5.5, 1.06)
+	pt3dadd(63.4, 41.7, 5, 0.24)
+  }
+  apic[23] {pt3dclear()
+	pt3dadd(62.3, 42.5, 5.5, 1.06)
+	pt3dadd(62, 42.2, 5.5, 0.7)
+	pt3dadd(60.7, 40.8, 6.5, 0.9)
+  }
+  dend_6[27] {pt3dclear()
+	pt3dadd(60.7, 40.8, 6.5, 0.9)
+	pt3dadd(60.5, 40.6, 6.5, 0.9)
+  }
+  dend_9[38] {pt3dclear()
+	pt3dadd(60.5, 40.6, 6.5, 0.9)
+	pt3dadd(62, 39.3, 6.5, 0.24)
+  }
+  apic[24] {pt3dclear()
+	pt3dadd(60.5, 40.6, 6.5, 0.9)
+	pt3dadd(60.4, 40.3, 6.5, 0.9)
+  }
+  dend_6[28] {pt3dclear()
+	pt3dadd(60.4, 40.3, 6.5, 0.9)
+	pt3dadd(60.3, 40.1, 6.5, 1.06)
+  }
+  dend_9[39] {pt3dclear()
+	pt3dadd(60.3, 40.1, 6.5, 1.06)
+	pt3dadd(61.3, 39, 6.5, 0.24)
+  }
+  dend_9[40] {pt3dclear()
+	pt3dadd(60.3, 40.1, 6.5, 1.06)
+	pt3dadd(59.2, 40.9, 7, 0.24)
+  }
+  apic[25] {pt3dclear()
+	pt3dadd(60.3, 40.1, 6.5, 1.06)
+	pt3dadd(60, 39.9, 6.5, 1.6)
+	pt3dadd(59.6, 39.5, 7, 1.24)
+  }
+  dend_6[29] {pt3dclear()
+	pt3dadd(59.6, 39.5, 7, 1.24)
+	pt3dadd(59.4, 39.4, 7, 1.42)
+  }
+  dend_9[41] {pt3dclear()
+	pt3dadd(59.4, 39.4, 7, 1.42)
+	pt3dadd(61.1, 37.2, 7.5, 0.24)
+  }
+  apic[26] {pt3dclear()
+	pt3dadd(59.4, 39.4, 7, 1.42)
+	pt3dadd(59.1, 39.3, 7, 1.76)
+  }
+  dend_6[30] {pt3dclear()
+	pt3dadd(59.1, 39.3, 7, 1.76)
+	pt3dadd(59, 39.1, 7, 1.6)
+  }
+  dend_9[42] {pt3dclear()
+	pt3dadd(59, 39.1, 7, 1.6)
+	pt3dadd(58.2, 40.1, 7, 0.24)
+  }
+  dend_9[43] {pt3dclear()
+	pt3dadd(59, 39.1, 7, 1.6)
+	pt3dadd(57.8, 39.6, 7, 0.5)
+  }
+  apic[27] {pt3dclear()
+	pt3dadd(59, 39.1, 7, 1.6)
+	pt3dadd(58.7, 38.8, 7, 1.24)
+  }
+  dend_6[31] {pt3dclear()
+	pt3dadd(58.7, 38.8, 7, 1.24)
+	pt3dadd(58.4, 38.5, 8, 0.9)
+  }
+  dend_9[44] {pt3dclear()
+	pt3dadd(58.4, 38.5, 8, 0.9)
+	pt3dadd(57.7, 39.3, 8.5, 0.36)
+  }
+  apic[28] {pt3dclear()
+	pt3dadd(58.4, 38.5, 8, 0.9)
+	pt3dadd(58, 38.1, 8.5, 0.56)
+  }
+  dend_6[32] {pt3dclear()
+	pt3dadd(58, 38.1, 8.5, 0.56)
+	pt3dadd(57.9, 37.4, 9, 0.76)
+  }
+  dend_9[45] {pt3dclear()
+	pt3dadd(58, 38.1, 8.5, 0.56)
+	pt3dadd(57.8, 37.4, 7.5, 0.5)
+  }
+  apic[29] {pt3dclear()
+	pt3dadd(58, 38.1, 8.5, 0.56)
+	pt3dadd(57.8, 37.1, 9, 0.56)
+	pt3dadd(57.4, 36.4, 9, 0.7)
+  }
+  dend_6[33] {pt3dclear()
+	pt3dadd(57.4, 36.4, 9, 0.7)
+	pt3dadd(57.2, 36.3, 9, 0.56)
+  }
+  dend_9[46] {pt3dclear()
+	pt3dadd(57.2, 36.3, 9, 0.56)
+	pt3dadd(56.3, 37.5, 10.5, 0.36)
+  }
+  apic[30] {pt3dclear()
+	pt3dadd(57.2, 36.3, 9, 0.56)
+	pt3dadd(57, 36.1, 9, 0.56)
+	pt3dadd(55.8, 35.4, 9, 0.7)
+  }
+  dend_6[34] {pt3dclear()
+	pt3dadd(55.8, 35.4, 9, 0.7)
+	pt3dadd(55.7, 35.4, 10, 0.9)
+  }
+  dend_9[47] {pt3dclear()
+	pt3dadd(55.7, 35.4, 10, 0.9)
+	pt3dadd(55.2, 35.9, 9.5, 0.24)
+  }
+  apic[31] {pt3dclear()
+	pt3dadd(55.7, 35.4, 10, 0.9)
+	pt3dadd(55.4, 35.2, 9, 0.7)
+	pt3dadd(55.1, 34.5, 8, 1.06)
+  }
+  dend_6[35] {pt3dclear()
+	pt3dadd(55.1, 34.5, 8, 1.06)
+	pt3dadd(54.9, 34.2, 8, 1.96)
+  }
+  dend_9[48] {pt3dclear()
+	pt3dadd(54.9, 34.2, 8, 1.96)
+	pt3dadd(55.2, 33.4, 8, 1)
+  }
+  dend_5 {pt3dclear()
+	pt3dadd(54.9, 34.2, 8, 1.96)
+	pt3dadd(55, 31.8, 8, 1.12)
+  }
+  dend_6[36] {pt3dclear()
+	pt3dadd(55, 31.8, 8, 1.12)
+	pt3dadd(55.1, 31.7, 7.5, 1.28)
+  }
+  dend_9[49] {pt3dclear()
+	pt3dadd(55.1, 31.7, 7.5, 1.28)
+	pt3dadd(51.8, 31.8, 7.5, 0.5)
+  }
+  dend_5[1] {pt3dclear()
+	pt3dadd(55.1, 31.7, 7.5, 1.28)
+	pt3dadd(55, 31.3, 7.5, 1.04)
+	pt3dadd(55.1, 29, 6.5, 1.82)
+  }
+  dend_6[37] {pt3dclear()
+	pt3dadd(55.1, 29, 6.5, 1.82)
+	pt3dadd(55.1, 28.7, 6.5, 1.76)
+  }
+  dend_9[50] {pt3dclear()
+	pt3dadd(55.1, 28.7, 6.5, 1.76)
+	pt3dadd(56.8, 28.9, 6.5, 0.24)
+  }
+  dend_9[51] {pt3dclear()
+	pt3dadd(55.1, 28.7, 6.5, 1.76)
+	pt3dadd(53.8, 28.1, 7, 0.24)
+  }
+  dend_5[2] {pt3dclear()
+	pt3dadd(55.1, 28.7, 6.5, 1.76)
+	pt3dadd(55.3, 27.6, 7.5, 0.76)
+	pt3dadd(54.9, 27.6, 10, 0.76)
+  }
+  dend_6[38] {pt3dclear()
+	pt3dadd(54.9, 27.6, 10, 0.76)
+	pt3dadd(54.9, 27.4, 10, 1.24)
+  }
+  dend_9[52] {pt3dclear()
+	pt3dadd(54.9, 27.6, 10, 0.76)
+	pt3dadd(52.8, 27.3, 10, 0.24)
+  }
+  dend_5[3] {pt3dclear()
+	pt3dadd(54.9, 27.6, 10, 0.76)
+	pt3dadd(54.9, 27, 10.5, 0.76)
+	pt3dadd(54.9, 27.1, 11, 0.8)
+  }
+  dend_6[39] {pt3dclear()
+	pt3dadd(54.9, 27.1, 11, 0.8)
+	pt3dadd(54.7, 26.7, 11, 0.8)
+  }
+  dend_9[53] {pt3dclear()
+	pt3dadd(54.7, 26.7, 11, 0.8)
+	pt3dadd(53.2, 27.3, 11, 0.24)
+  }
+  dend_5[4] {pt3dclear()
+	pt3dadd(54.7, 26.7, 11, 0.8)
+	pt3dadd(54.6, 26.3, 11, 1.04)
+  }
+  dend_6[40] {pt3dclear()
+	pt3dadd(54.6, 26.3, 11, 1.04)
+	pt3dadd(54, 25.9, 11.5, 0.56)
+  }
+  dend_9[54] {pt3dclear()
+	pt3dadd(54, 25.9, 11.5, 0.56)
+	pt3dadd(52, 26.5, 11.5, 0.76)
+  }
+  dend_9[55] {pt3dclear()
+	pt3dadd(54, 25.9, 11.5, 0.56)
+	pt3dadd(55.1, 24.9, 11.5, 0.36)
+  }
+  dend_5[5] {pt3dclear()
+	pt3dadd(54, 25.9, 11.5, 0.56)
+	pt3dadd(53.8, 25.4, 13.5, 0.5)
+	pt3dadd(54.6, 24.8, 14, 0.5)
+	pt3dadd(54.7, 24.1, 14.5, 0.8)
+  }
+  dend_6[41] {pt3dclear()
+	pt3dadd(54.7, 24.1, 14.5, 0.8)
+	pt3dadd(54.5, 23.8, 14.5, 0.9)
+  }
+  dend_9[56] {pt3dclear()
+	pt3dadd(54.5, 23.8, 14.5, 0.9)
+	pt3dadd(53.2, 24.5, 14.5, 0.24)
+  }
+  dend_9[57] {pt3dclear()
+	pt3dadd(54.5, 23.8, 14.5, 0.9)
+	pt3dadd(55.6, 23.7, 14, 0.24)
+  }
+  dend_5[6] {pt3dclear()
+	pt3dadd(54.5, 23.8, 14.5, 0.9)
+	pt3dadd(54.3, 23.6, 14.5, 0.9)
+  }
+  dend_6[42] {pt3dclear()
+	pt3dadd(54.3, 23.6, 14.5, 0.9)
+	pt3dadd(54.3, 23.4, 14.5, 0.9)
+  }
+  dend_9[58] {pt3dclear()
+	pt3dadd(54.3, 23.4, 14.5, 0.9)
+	pt3dadd(53, 23.9, 14.5, 0.24)
+  }
+  dend_9[59] {pt3dclear()
+	pt3dadd(54.3, 23.4, 14.5, 0.9)
+	pt3dadd(55.2, 22.9, 14.5, 0.24)
+  }
+  dend_5[7] {pt3dclear()
+	pt3dadd(54.3, 23.4, 14.5, 0.9)
+	pt3dadd(54.3, 23, 14.5, 0.76)
+	pt3dadd(54, 21.9, 15, 0.56)
+  }
+  dend_6[43] {pt3dclear()
+	pt3dadd(54, 21.9, 15, 0.56)
+	pt3dadd(53.9, 21.6, 15, 0.76)
+  }
+  dend_9[60] {pt3dclear()
+	pt3dadd(53.9, 21.6, 15, 0.76)
+	pt3dadd(52.7, 22.1, 15, 0.36)
+  }
+  dend_9[61] {pt3dclear()
+	pt3dadd(53.9, 21.6, 15, 0.76)
+	pt3dadd(52.7, 21.5, 16, 0.36)
+  }
+  dend_9[62] {pt3dclear()
+	pt3dadd(53.9, 21.6, 15, 0.76)
+	pt3dadd(55.2, 21.5, 16, 0.24)
+  }
+  dend_5[8] {pt3dclear()
+	pt3dadd(53.9, 21.6, 15, 0.76)
+	pt3dadd(54.1, 21.4, 16, 0.76)
+  }
+  dend_6[44] {pt3dclear()
+	pt3dadd(54.1, 21.4, 16, 0.76)
+	pt3dadd(54.1, 21.1, 16, 0.8)
+  }
+  dend_9[63] {pt3dclear()
+	pt3dadd(54.1, 21.1, 16, 0.8)
+	pt3dadd(52.6, 20.2, 16, 0.5)
+  }
+  dend_5[9] {pt3dclear()
+	pt3dadd(54.1, 21.1, 16, 0.8)
+	pt3dadd(54.4, 20.7, 16, 0.56)
+	pt3dadd(54.5, 19.6, 16, 0.76)
+  }
+  dend_6[45] {pt3dclear()
+	pt3dadd(54.5, 19.6, 16, 0.76)
+	pt3dadd(54.5, 19.4, 16, 0.76)
+  }
+  dend_9[64] {pt3dclear()
+	pt3dadd(54.5, 19.4, 16, 0.76)
+	pt3dadd(52.9, 18.9, 16.5, 0.36)
+  }
+  dend_5[10] {pt3dclear()
+	pt3dadd(54.5, 19.4, 16, 0.76)
+	pt3dadd(54.5, 19, 16, 0.76)
+	pt3dadd(54.3, 18.3, 16, 0.8)
+  }
+  dend_6[46] {pt3dclear()
+	pt3dadd(54.3, 18.3, 16, 0.8)
+	pt3dadd(54.3, 17.9, 16, 0.8)
+  }
+  dend_9[65] {pt3dclear()
+	pt3dadd(54.3, 17.9, 16, 0.8)
+	pt3dadd(56, 17.7, 15.5, 0.24)
+  }
+  dend_5[11] {pt3dclear()
+	pt3dadd(54.3, 17.9, 16, 0.8)
+	pt3dadd(54.1, 17.7, 15.5, 0.8)
+	pt3dadd(54.1, 16.7, 15.5, 0.8)
+  }
+  dend_6[47] {pt3dclear()
+	pt3dadd(54.1, 16.7, 15.5, 0.8)
+	pt3dadd(54.1, 16.4, 16, 0.76)
+  }
+  dend_9[66] {pt3dclear()
+	pt3dadd(54.1, 16.4, 16, 0.76)
+	pt3dadd(52.2, 16.3, 16, 0.24)
+  }
+  dend_5[12] {pt3dclear()
+	pt3dadd(54.1, 16.4, 16, 0.76)
+	pt3dadd(54.2, 16.1, 16, 0.56)
+	pt3dadd(54, 14.3, 16, 0.56)
+	pt3dadd(52.6, 12.3, 16, 0.56)
+  }
+  dend_6[48] {pt3dclear()
+	pt3dadd(52.6, 12.3, 16, 0.56)
+	pt3dadd(52.4, 12, 16, 0.7)
+  }
+  dend_9[67] {pt3dclear()
+	pt3dadd(52.4, 12, 16, 0.7)
+	pt3dadd(51.8, 12.5, 15, 0.24)
+  }
+  dend_5[13] {pt3dclear()
+	pt3dadd(52.4, 12, 16, 0.7)
+	pt3dadd(52.2, 11.7, 16, 0.56)
+  }
+  dend_6[49] {pt3dclear()
+	pt3dadd(52.2, 11.7, 16, 0.56)
+	pt3dadd(51.8, 11.3, 16, 0.56)
+  }
+  dend_9[68] {pt3dclear()
+	pt3dadd(51.8, 11.3, 16, 0.56)
+	pt3dadd(50.9, 11.7, 15.5, 0.36)
+  }
+  dend_5[14] {pt3dclear()
+	pt3dadd(51.8, 11.3, 16, 0.56)
+	pt3dadd(51.6, 10.6, 15.5, 0.7)
+	pt3dadd(50.4, 7.9, 16.5, 0.56)
+  }
+  dend_6[50] {pt3dclear()
+	pt3dadd(50.4, 7.9, 16.5, 0.56)
+	pt3dadd(50.3, 7.4, 16.5, 0.9)
+  }
+  dend_9[69] {pt3dclear()
+	pt3dadd(50.3, 7.4, 16.5, 0.9)
+	pt3dadd(51.2, 6.7, 16, 0.24)
+  }
+  dend_5[15] {pt3dclear()
+	pt3dadd(50.3, 7.4, 16.5, 0.9)
+	pt3dadd(50.1, 7.1, 17.5, 0.8)
+  }
+  dend_7 {pt3dclear()
+	pt3dadd(50.1, 7.1, 17.5, 0.8)
+  }
+}
+proc shape3d_3() {
+  dend_7 {	pt3dadd(49.8, 4.6, 17.5, 0.5)
+  }
+  dend_5[16] {pt3dclear()
+	pt3dadd(55, 31.8, 8, 1.12)
+	pt3dadd(53.7, 35.1, 8, 0.8)
+	pt3dadd(51.9, 36.3, 9.5, 0.8)
+	pt3dadd(49.5, 38.1, 10, 0.8)
+  }
+  dend_6[51] {pt3dclear()
+	pt3dadd(49.5, 38.1, 10, 0.8)
+	pt3dadd(49.3, 38.1, 10, 0.8)
+  }
+  dend_9[70] {pt3dclear()
+	pt3dadd(49.3, 38.1, 10, 0.8)
+	pt3dadd(48.3, 35.5, 10, 0.36)
+  }
+  dend_5[17] {pt3dclear()
+	pt3dadd(49.3, 38.1, 10, 0.8)
+	pt3dadd(48.9, 38.3, 10, 0.8)
+	pt3dadd(48.3, 38.5, 10, 0.8)
+  }
+  dend_6[52] {pt3dclear()
+	pt3dadd(48.3, 38.5, 10, 0.8)
+	pt3dadd(48, 38.7, 10, 0.9)
+  }
+  dend_9[71] {pt3dclear()
+	pt3dadd(48, 38.7, 10, 0.9)
+	pt3dadd(47.1, 37.5, 10, 0.36)
+  }
+  dend_5[18] {pt3dclear()
+	pt3dadd(48, 38.7, 10, 0.9)
+	pt3dadd(47.6, 39.1, 10, 0.9)
+	pt3dadd(46.5, 39.6, 10, 1.68)
+  }
+  dend_6[53] {pt3dclear()
+	pt3dadd(46.5, 39.6, 10, 1.68)
+	pt3dadd(45.9, 39.8, 10, 1.68)
+  }
+  dend_9[72] {pt3dclear()
+	pt3dadd(45.9, 39.8, 10, 1.68)
+	pt3dadd(44.7, 37.5, 10.5, 0.36)
+  }
+  dend_5[19] {pt3dclear()
+	pt3dadd(45.9, 39.8, 10, 1.68)
+	pt3dadd(45.4, 39.8, 10, 1.58)
+  }
+  dend_6[54] {pt3dclear()
+	pt3dadd(45.4, 39.8, 10, 1.58)
+	pt3dadd(45, 39.7, 10, 1.34)
+  }
+  dend_9[73] {pt3dclear()
+	pt3dadd(45, 39.7, 10, 1.34)
+	pt3dadd(44.4, 38.3, 10, 0.56)
+  }
+  dend_5[20] {pt3dclear()
+	pt3dadd(45, 39.7, 10, 1.34)
+	pt3dadd(44.7, 39.9, 10, 1.28)
+	pt3dadd(43.9, 40, 10, 1.04)
+  }
+  dend_6[55] {pt3dclear()
+	pt3dadd(43.9, 40, 10, 1.04)
+	pt3dadd(43.5, 40.1, 10, 0.8)
+  }
+  dend_9[74] {pt3dclear()
+	pt3dadd(43.5, 40.1, 10, 0.8)
+	pt3dadd(43.9, 41.3, 10, 0.36)
+  }
+  dend_5[21] {pt3dclear()
+	pt3dadd(43.5, 40.1, 10, 0.8)
+	pt3dadd(43.1, 40.1, 10, 0.8)
+	pt3dadd(42.3, 40.3, 10, 0.8)
+  }
+  dend_6[56] {pt3dclear()
+	pt3dadd(42.3, 40.3, 10, 0.8)
+	pt3dadd(42.1, 40.5, 10, 0.8)
+  }
+  dend_9[75] {pt3dclear()
+	pt3dadd(42.1, 40.5, 10, 0.8)
+	pt3dadd(42.3, 41.4, 10, 0.24)
+  }
+  dend_5[22] {pt3dclear()
+	pt3dadd(42.1, 40.5, 10, 0.8)
+	pt3dadd(41.7, 40.3, 10, 0.8)
+	pt3dadd(37.9, 40.9, 9.5, 0.8)
+  }
+  dend_6[57] {pt3dclear()
+	pt3dadd(37.9, 40.9, 9.5, 0.8)
+	pt3dadd(37.4, 40.8, 9.5, 0.5)
+  }
+  dend_9[76] {pt3dclear()
+	pt3dadd(37.4, 40.8, 9.5, 0.5)
+	pt3dadd(37.5, 41.8, 9.5, 0.24)
+  }
+  dend_5[23] {pt3dclear()
+	pt3dadd(37.4, 40.8, 9.5, 0.5)
+	pt3dadd(37, 40.9, 9.5, 0.76)
+	pt3dadd(35.7, 40.9, 9, 0.8)
+  }
+  dend_6[58] {pt3dclear()
+	pt3dadd(35.7, 40.9, 9, 0.8)
+	pt3dadd(35.3, 41, 9, 0.56)
+  }
+  dend_9[77] {pt3dclear()
+	pt3dadd(35.3, 41, 9, 0.56)
+	pt3dadd(35.5, 42, 9.5, 0.24)
+  }
+  dend_5[24] {pt3dclear()
+	pt3dadd(35.3, 41, 9, 0.56)
+	pt3dadd(35, 41.1, 9, 0.76)
+	pt3dadd(32.6, 41.3, 9, 0.76)
+  }
+  dend_7[1] {pt3dclear()
+	pt3dadd(32.6, 41.3, 9, 0.76)
+	pt3dadd(31.4, 41.2, 7.5, 0.5)
+  }
+  apic[32] {pt3dclear()
+	pt3dadd(72.9, 81.3, 10.5, 1.46)
+	pt3dadd(72.1, 82.1, 11.5, 1.28)
+	pt3dadd(69.5, 82.1, 12.5, 1.28)
+  }
+  dend_6[59] {pt3dclear()
+	pt3dadd(69.5, 82.1, 12.5, 1.28)
+	pt3dadd(69, 82.1, 12.5, 1.34)
+  }
+  dend_9[78] {pt3dclear()
+	pt3dadd(69, 82.1, 12.5, 1.34)
+	pt3dadd(68.8, 83.9, 12, 0.56)
+  }
+  dend_9[79] {pt3dclear()
+	pt3dadd(69, 82.1, 12.5, 1.34)
+	pt3dadd(69.5, 80.6, 12, 0.24)
+  }
+  apic[33] {pt3dclear()
+	pt3dadd(69, 82.1, 12.5, 1.34)
+	pt3dadd(68.4, 81.8, 12.5, 1.12)
+	pt3dadd(67.6, 81.1, 13.5, 0.9)
+  }
+  dend_6[60] {pt3dclear()
+	pt3dadd(67.6, 81.1, 13.5, 0.9)
+	pt3dadd(67.3, 80.9, 13.5, 0.8)
+  }
+  dend_9[80] {pt3dclear()
+	pt3dadd(67.3, 80.9, 13.5, 0.8)
+	pt3dadd(67.9, 80, 13.5, 0.24)
+  }
+  dend_9[81] {pt3dclear()
+	pt3dadd(67.3, 80.9, 13.5, 0.8)
+	pt3dadd(67.1, 80.5, 13, 0.36)
+  }
+  apic[34] {pt3dclear()
+	pt3dadd(67.3, 80.9, 13.5, 0.8)
+	pt3dadd(66.6, 81.1, 14.5, 0.76)
+  }
+  dend_6[61] {pt3dclear()
+	pt3dadd(66.6, 81.1, 14.5, 0.76)
+	pt3dadd(66.2, 81.1, 14.5, 0.9)
+  }
+  dend_9[82] {pt3dclear()
+	pt3dadd(66.2, 81.1, 14.5, 0.9)
+	pt3dadd(67.1, 79.8, 14.5, 0.24)
+  }
+  dend_9[83] {pt3dclear()
+	pt3dadd(66.2, 81.1, 14.5, 0.9)
+	pt3dadd(67, 79.8, 14, 0.5)
+  }
+  dend_9[84] {pt3dclear()
+	pt3dadd(66.2, 81.1, 14.5, 0.9)
+	pt3dadd(65.8, 80.5, 13.5, 0.24)
+  }
+  apic[35] {pt3dclear()
+	pt3dadd(66.2, 81.1, 14.5, 0.9)
+	pt3dadd(65.6, 80.9, 14.5, 0.9)
+  }
+  dend_6[62] {pt3dclear()
+	pt3dadd(65.6, 80.9, 14.5, 0.9)
+	pt3dadd(65.2, 80.7, 15, 0.9)
+  }
+  dend_9[85] {pt3dclear()
+	pt3dadd(65.2, 80.7, 15, 0.9)
+	pt3dadd(65.9, 79.8, 15, 0.24)
+  }
+  apic[36] {pt3dclear()
+	pt3dadd(65.2, 80.7, 15, 0.9)
+	pt3dadd(64.9, 80.5, 15, 0.8)
+	pt3dadd(64.3, 80.2, 15, 0.56)
+  }
+  dend_6[63] {pt3dclear()
+	pt3dadd(64.3, 80.2, 15, 0.56)
+	pt3dadd(64, 80, 15, 0.7)
+  }
+  dend_9[86] {pt3dclear()
+	pt3dadd(64, 80, 15, 0.7)
+	pt3dadd(63.5, 80.7, 15, 0.36)
+  }
+  dend_9[87] {pt3dclear()
+	pt3dadd(64, 80, 15, 0.7)
+	pt3dadd(64.7, 78.9, 15, 0.36)
+  }
+  apic[37] {pt3dclear()
+	pt3dadd(64, 80, 15, 0.7)
+	pt3dadd(63.7, 79.4, 15, 0.9)
+	pt3dadd(62.9, 79.1, 15, 1.06)
+  }
+  dend_6[64] {pt3dclear()
+	pt3dadd(62.9, 79.1, 15, 1.06)
+	pt3dadd(62.7, 78.9, 15, 1.06)
+  }
+  dend_9[88] {pt3dclear()
+	pt3dadd(62.7, 78.9, 15, 1.06)
+	pt3dadd(61.9, 80.1, 15, 0.36)
+  }
+  dend_9[89] {pt3dclear()
+	pt3dadd(62.7, 78.9, 15, 1.06)
+	pt3dadd(61.4, 79.5, 15, 0.24)
+  }
+  apic[38] {pt3dclear()
+	pt3dadd(62.7, 78.9, 15, 1.06)
+	pt3dadd(62.4, 78.8, 15, 0.7)
+	pt3dadd(60.7, 76.2, 15, 0.9)
+  }
+  dend_6[65] {pt3dclear()
+	pt3dadd(60.7, 76.2, 15, 0.9)
+	pt3dadd(60.5, 75.8, 15, 0.9)
+  }
+  dend_9[90] {pt3dclear()
+	pt3dadd(60.5, 75.8, 15, 0.9)
+	pt3dadd(59.6, 76.3, 15, 0.24)
+  }
+  apic[39] {pt3dclear()
+	pt3dadd(60.5, 75.8, 15, 0.9)
+	pt3dadd(60.2, 75.4, 15, 1.12)
+	pt3dadd(59.3, 73.6, 15, 0.9)
+  }
+  dend_6[66] {pt3dclear()
+	pt3dadd(59.3, 73.6, 15, 0.9)
+	pt3dadd(59.1, 73.4, 15, 0.9)
+  }
+  dend_9[91] {pt3dclear()
+	pt3dadd(59.1, 73.4, 15, 0.9)
+	pt3dadd(60, 73.1, 15, 1)
+  }
+  dend_9[92] {pt3dclear()
+	pt3dadd(59.1, 73.4, 15, 0.9)
+	pt3dadd(58, 74.1, 15, 1)
+  }
+  apic[40] {pt3dclear()
+	pt3dadd(59.1, 73.4, 15, 0.9)
+	pt3dadd(58.8, 72.9, 15, 0.9)
+	pt3dadd(58.3, 70.4, 15, 0.9)
+  }
+  dend_6[67] {pt3dclear()
+	pt3dadd(58.3, 70.4, 15, 0.9)
+	pt3dadd(58.2, 70, 15, 0.7)
+  }
+  dend_9[93] {pt3dclear()
+	pt3dadd(58.2, 70, 15, 0.7)
+	pt3dadd(57.3, 70.5, 14.5, 0.36)
+  }
+  dend_9[94] {pt3dclear()
+	pt3dadd(58.2, 70, 15, 0.7)
+	pt3dadd(56.4, 70.4, 16, 0.5)
+  }
+  apic[41] {pt3dclear()
+	pt3dadd(58.2, 70, 15, 0.7)
+	pt3dadd(57.8, 69.7, 15, 1.24)
+	pt3dadd(56.8, 68.4, 16, 1.12)
+	pt3dadd(55.6, 66.3, 16, 1.34)
+  }
+  dend_6[68] {pt3dclear()
+	pt3dadd(55.6, 66.3, 16, 1.34)
+	pt3dadd(55.3, 66.2, 16, 1.04)
+  }
+  dend_9[95] {pt3dclear()
+	pt3dadd(55.3, 66.2, 16, 1.04)
+	pt3dadd(55.6, 64.8, 16, 0.5)
+  }
+  apic[42] {pt3dclear()
+	pt3dadd(55.3, 66.2, 16, 1.04)
+	pt3dadd(54.9, 66.4, 16, 1.04)
+	pt3dadd(53.1, 66.2, 16, 1.04)
+  }
+  dend_6[69] {pt3dclear()
+	pt3dadd(53.1, 66.2, 16, 1.04)
+	pt3dadd(52.9, 66.1, 16, 0.8)
+  }
+  dend_9[96] {pt3dclear()
+	pt3dadd(52.9, 66.1, 16, 0.8)
+	pt3dadd(52.5, 67.2, 16, 0.24)
+  }
+  apic[43] {pt3dclear()
+	pt3dadd(52.9, 66.1, 16, 0.8)
+	pt3dadd(52.5, 66.1, 16, 0.8)
+	pt3dadd(49.7, 65.9, 15.5, 1.28)
+  }
+  dend_6[70] {pt3dclear()
+	pt3dadd(49.7, 65.9, 15.5, 1.28)
+	pt3dadd(49.4, 65.7, 15.5, 0.9)
+  }
+  dend_9[97] {pt3dclear()
+	pt3dadd(49.4, 65.7, 15.5, 0.9)
+	pt3dadd(48.9, 66.7, 16, 0.36)
+  }
+  dend_9[98] {pt3dclear()
+	pt3dadd(49.4, 65.7, 15.5, 0.9)
+	pt3dadd(49.1, 69, 14.5, 0.24)
+  }
+  apic[44] {pt3dclear()
+	pt3dadd(49.4, 65.7, 15.5, 0.9)
+	pt3dadd(47.9, 65.5, 15.5, 0.8)
+	pt3dadd(46.7, 65.5, 15, 0.8)
+  }
+  dend_6[71] {pt3dclear()
+	pt3dadd(46.7, 65.5, 15, 0.8)
+	pt3dadd(46.2, 65.5, 15, 0.76)
+  }
+  dend_9[99] {pt3dclear()
+	pt3dadd(46.2, 65.5, 15, 0.76)
+	pt3dadd(46.6, 64.1, 15, 0.56)
+  }
+  dend_9[100] {pt3dclear()
+	pt3dadd(46.2, 65.5, 15, 0.76)
+	pt3dadd(46.2, 66.6, 15, 0.5)
+  }
+  apic[45] {pt3dclear()
+	pt3dadd(46.2, 65.5, 15, 0.76)
+	pt3dadd(45.8, 65.4, 15, 1)
+	pt3dadd(44.9, 65.4, 15, 1.04)
+  }
+  dend_6[72] {pt3dclear()
+	pt3dadd(44.9, 65.4, 15, 1.04)
+	pt3dadd(44.6, 65.3, 15, 1.24)
+  }
+  dend_5[25] {pt3dclear()
+	pt3dadd(44.6, 65.3, 15, 1.24)
+	pt3dadd(44.7, 66.2, 15, 0.9)
+  }
+  dend_6[73] {pt3dclear()
+	pt3dadd(44.7, 66.2, 15, 0.9)
+	pt3dadd(44.5, 66.6, 15, 0.9)
+  }
+  dend_9[101] {pt3dclear()
+	pt3dadd(44.5, 66.6, 15, 0.9)
+	pt3dadd(45.5, 67.1, 15, 0.36)
+  }
+  dend_9[102] {pt3dclear()
+	pt3dadd(44.5, 66.6, 15, 0.9)
+	pt3dadd(43.5, 66.3, 15, 0.36)
+  }
+  dend_5[26] {pt3dclear()
+	pt3dadd(44.5, 66.6, 15, 0.9)
+	pt3dadd(44.4, 67.1, 15, 1.04)
+	pt3dadd(43.9, 68.8, 15.5, 0.9)
+  }
+  dend_6[74] {pt3dclear()
+	pt3dadd(43.9, 68.8, 15.5, 0.9)
+	pt3dadd(43.7, 69.1, 15.5, 0.8)
+  }
+  dend_9[103] {pt3dclear()
+	pt3dadd(43.7, 69.1, 15.5, 0.8)
+	pt3dadd(45.9, 69.1, 16.5, 0.36)
+  }
+  dend_9[104] {pt3dclear()
+	pt3dadd(43.7, 69.1, 15.5, 0.8)
+	pt3dadd(42.4, 66.7, 16.5, 0.56)
+  }
+  dend_5[27] {pt3dclear()
+	pt3dadd(43.7, 69.1, 15.5, 0.8)
+	pt3dadd(43.5, 69.2, 15, 0.76)
+	pt3dadd(43.3, 70.6, 15, 0.76)
+	pt3dadd(43.4, 70.7, 14, 1.04)
+  }
+  dend_6[75] {pt3dclear()
+	pt3dadd(43.4, 70.7, 14, 1.04)
+	pt3dadd(43.4, 71.1, 14, 1.04)
+  }
+}
+proc shape3d_4() {
+  dend_6[75] {  }
+  dend_9[105] {pt3dclear()
+	pt3dadd(43.4, 71.1, 14, 1.04)
+	pt3dadd(40.7, 70, 14, 0.56)
+  }
+  dend_5[28] {pt3dclear()
+	pt3dadd(43.4, 71.1, 14, 1.04)
+	pt3dadd(43.4, 71.5, 14, 1.04)
+  }
+  dend_6[76] {pt3dclear()
+	pt3dadd(43.4, 71.5, 14, 1.04)
+	pt3dadd(43.3, 71.9, 14, 0.8)
+  }
+  dend_9[106] {pt3dclear()
+	pt3dadd(43.3, 71.9, 14, 0.8)
+	pt3dadd(41.6, 71.7, 13.5, 0.24)
+  }
+  dend_5[29] {pt3dclear()
+	pt3dadd(43.3, 71.9, 14, 0.8)
+	pt3dadd(43.2, 72.5, 14, 1.04)
+	pt3dadd(42.5, 74.2, 13.5, 0.9)
+  }
+  dend_6[77] {pt3dclear()
+	pt3dadd(42.5, 74.2, 13.5, 0.9)
+	pt3dadd(42.3, 74.6, 13.5, 0.9)
+  }
+  dend_9[107] {pt3dclear()
+	pt3dadd(42.3, 74.6, 13.5, 0.9)
+	pt3dadd(42.1, 74.7, 14.5, 0.36)
+  }
+  dend_5[30] {pt3dclear()
+	pt3dadd(42.3, 74.6, 13.5, 0.9)
+	pt3dadd(42.7, 75.2, 12.5, 0.76)
+	pt3dadd(43.3, 75.5, 11.5, 0.8)
+  }
+  dend_6[78] {pt3dclear()
+	pt3dadd(43.3, 75.5, 11.5, 0.8)
+	pt3dadd(43.4, 75.8, 11, 0.5)
+  }
+  dend_9[108] {pt3dclear()
+	pt3dadd(43.4, 75.8, 11, 0.5)
+	pt3dadd(43.6, 75.6, 8, 0.5)
+  }
+  dend_5[31] {pt3dclear()
+	pt3dadd(43.4, 75.8, 11, 0.5)
+	pt3dadd(43.3, 76.1, 10, 0.8)
+	pt3dadd(42.9, 78.2, 8.5, 0.76)
+	pt3dadd(41.6, 79.7, 6.5, 0.56)
+	pt3dadd(40.4, 80.2, 5, 0.7)
+  }
+  dend_6[79] {pt3dclear()
+	pt3dadd(40.4, 80.2, 5, 0.7)
+	pt3dadd(40.3, 80.6, 4.5, 0.9)
+  }
+  dend_9[109] {pt3dclear()
+	pt3dadd(40.3, 80.6, 4.5, 0.9)
+	pt3dadd(41.7, 81.6, 4.5, 0.56)
+  }
+  dend_5[32] {pt3dclear()
+	pt3dadd(40.3, 80.6, 4.5, 0.9)
+	pt3dadd(40, 81.2, 4.5, 0.7)
+	pt3dadd(38.8, 84.1, 4.5, 0.56)
+  }
+  dend_6[80] {pt3dclear()
+	pt3dadd(38.8, 84.1, 4.5, 0.56)
+	pt3dadd(38.6, 84.5, 4.5, 0.56)
+  }
+  dend_9[110] {pt3dclear()
+	pt3dadd(38.6, 84.5, 4.5, 0.56)
+	pt3dadd(37.3, 83.8, 5, 0.56)
+  }
+  dend_9[111] {pt3dclear()
+	pt3dadd(38.6, 84.5, 4.5, 0.56)
+	pt3dadd(39.2, 85.5, 5, 0.56)
+  }
+  dend_5[33] {pt3dclear()
+	pt3dadd(38.6, 84.5, 4.5, 0.56)
+	pt3dadd(38.4, 84.9, 4.5, 0.56)
+  }
+  dend_6[81] {pt3dclear()
+	pt3dadd(38.4, 84.9, 4.5, 0.56)
+	pt3dadd(38.1, 85.4, 4.5, 0.24)
+  }
+  dend_9[112] {pt3dclear()
+	pt3dadd(38.1, 85.4, 4.5, 0.24)
+	pt3dadd(38.1, 85.5, 5, 0.36)
+  }
+  dend_5[34] {pt3dclear()
+	pt3dadd(38.1, 85.4, 4.5, 0.24)
+	pt3dadd(38.2, 85.9, 4.5, 0.56)
+	pt3dadd(38.4, 86.4, 5, 0.5)
+  }
+  dend_6[82] {pt3dclear()
+	pt3dadd(38.4, 86.4, 5, 0.5)
+	pt3dadd(38.5, 86.6, 5, 0.76)
+  }
+  dend_9[113] {pt3dclear()
+	pt3dadd(38.5, 86.6, 5, 0.76)
+	pt3dadd(38.3, 86.8, 5.5, 0.24)
+  }
+  dend_5[35] {pt3dclear()
+	pt3dadd(38.5, 86.6, 5, 0.76)
+	pt3dadd(38.3, 87, 5, 0.56)
+	pt3dadd(35.7, 89.6, 5, 0.56)
+	pt3dadd(35.3, 90.8, 6.5, 0.9)
+  }
+  dend_6[83] {pt3dclear()
+	pt3dadd(35.3, 90.8, 6.5, 0.9)
+	pt3dadd(35.1, 91, 6.5, 0.9)
+  }
+  dend_9[114] {pt3dclear()
+	pt3dadd(35.1, 91, 6.5, 0.9)
+	pt3dadd(34, 90.5, 7, 0.24)
+  }
+  dend_5[36] {pt3dclear()
+	pt3dadd(35.1, 91, 6.5, 0.9)
+	pt3dadd(34.9, 91.3, 6.5, 1.06)
+  }
+  dend_6[84] {pt3dclear()
+	pt3dadd(34.9, 91.3, 6.5, 1.06)
+	pt3dadd(34.7, 91.8, 7, 0.9)
+  }
+  dend_9[115] {pt3dclear()
+	pt3dadd(34.7, 91.8, 7, 0.9)
+	pt3dadd(33.4, 91.3, 7, 0.24)
+  }
+  dend_9[116] {pt3dclear()
+	pt3dadd(34.7, 91.8, 7, 0.9)
+	pt3dadd(33.6, 91.6, 6.5, 0.5)
+  }
+  dend_9[117] {pt3dclear()
+	pt3dadd(34.7, 91.8, 7, 0.9)
+	pt3dadd(35, 92.1, 6.5, 0.56)
+  }
+  dend_5[37] {pt3dclear()
+	pt3dadd(34.7, 91.8, 7, 0.9)
+	pt3dadd(34.4, 92.5, 7.5, 0.56)
+	pt3dadd(33.7, 94.2, 9, 1.34)
+  }
+  dend_6[85] {pt3dclear()
+	pt3dadd(33.7, 94.2, 9, 1.34)
+	pt3dadd(33.7, 94.6, 9.5, 1.34)
+  }
+  dend_9[118] {pt3dclear()
+	pt3dadd(33.7, 94.6, 9.5, 1.34)
+	pt3dadd(31.8, 93.9, 9.5, 0.24)
+  }
+  dend_9[119] {pt3dclear()
+	pt3dadd(33.7, 94.6, 9.5, 1.34)
+	pt3dadd(32.2, 95.1, 9.5, 0.24)
+  }
+  dend_7[2] {pt3dclear()
+	pt3dadd(33.7, 94.6, 9.5, 1.34)
+	pt3dadd(33.6, 95.1, 9.5, 1.04)
+  }
+  dend_5[38] {pt3dclear()
+	pt3dadd(44.6, 65.3, 15, 1.24)
+	pt3dadd(43.9, 65.3, 15, 0.8)
+  }
+  dend_6[86] {pt3dclear()
+	pt3dadd(43.9, 65.3, 15, 0.8)
+	pt3dadd(43.5, 65.3, 15, 0.8)
+  }
+  dend_9[120] {pt3dclear()
+	pt3dadd(43.5, 65.3, 15, 0.8)
+	pt3dadd(43.9, 64.3, 15, 0.36)
+  }
+  dend_5[39] {pt3dclear()
+	pt3dadd(43.5, 65.3, 15, 0.8)
+	pt3dadd(43.1, 65.3, 15, 0.8)
+	pt3dadd(41.1, 65.3, 14.5, 0.8)
+  }
+  dend_6[87] {pt3dclear()
+	pt3dadd(41.1, 65.3, 14.5, 0.8)
+	pt3dadd(40.8, 65.3, 14.5, 0.76)
+  }
+  dend_9[121] {pt3dclear()
+	pt3dadd(40.8, 65.3, 14.5, 0.76)
+	pt3dadd(40.9, 66.2, 14.5, 0.24)
+  }
+  dend_5[40] {pt3dclear()
+	pt3dadd(40.8, 65.3, 14.5, 0.76)
+	pt3dadd(40.5, 65.3, 14.5, 0.8)
+	pt3dadd(39.2, 65.3, 13.5, 0.76)
+  }
+  dend_6[88] {pt3dclear()
+	pt3dadd(39.2, 65.3, 13.5, 0.76)
+	pt3dadd(39, 65.1, 13.5, 0.76)
+  }
+  dend_9[122] {pt3dclear()
+	pt3dadd(39, 65.1, 13.5, 0.76)
+	pt3dadd(38.9, 63.2, 13.5, 0.24)
+  }
+  dend_5[41] {pt3dclear()
+	pt3dadd(39, 65.1, 13.5, 0.76)
+	pt3dadd(38.8, 65.3, 13.5, 0.76)
+	pt3dadd(38.1, 65.3, 13.5, 0.8)
+  }
+  dend_6[89] {pt3dclear()
+	pt3dadd(38.1, 65.3, 13.5, 0.8)
+	pt3dadd(37.9, 65.3, 13.5, 0.8)
+  }
+  dend_9[123] {pt3dclear()
+	pt3dadd(37.9, 65.3, 13.5, 0.8)
+	pt3dadd(38.2, 64, 13.5, 0.5)
+  }
+  dend_5[42] {pt3dclear()
+	pt3dadd(37.9, 65.3, 13.5, 0.8)
+	pt3dadd(37.5, 65.3, 13.5, 0.8)
+	pt3dadd(36.3, 65.2, 13.5, 1.52)
+	pt3dadd(34, 65, 13.5, 1.58)
+  }
+  dend_6[90] {pt3dclear()
+	pt3dadd(34, 65, 13.5, 1.58)
+	pt3dadd(33.7, 64.9, 13.5, 1.76)
+  }
+  dend_9[124] {pt3dclear()
+	pt3dadd(33.7, 64.9, 13.5, 1.76)
+	pt3dadd(34, 66.9, 13.5, 0.24)
+  }
+  dend_9[125] {pt3dclear()
+	pt3dadd(33.7, 64.9, 13.5, 1.76)
+	pt3dadd(32.9, 67.3, 13.5, 0.36)
+  }
+  dend_5[43] {pt3dclear()
+	pt3dadd(33.7, 64.9, 13.5, 1.76)
+	pt3dadd(33.1, 64.8, 13, 1.04)
+	pt3dadd(30.5, 64.2, 13, 0.56)
+  }
+  dend_6[91] {pt3dclear()
+	pt3dadd(30.5, 64.2, 13, 0.56)
+	pt3dadd(30.1, 64.3, 12.5, 1.28)
+  }
+  dend_9[126] {pt3dclear()
+	pt3dadd(30.1, 64.3, 12.5, 1.28)
+	pt3dadd(30.9, 62.8, 12.5, 0.24)
+  }
+  dend_9[127] {pt3dclear()
+	pt3dadd(30.1, 64.3, 12.5, 1.28)
+	pt3dadd(30.1, 66.2, 12.5, 0.24)
+  }
+  dend_5[44] {pt3dclear()
+	pt3dadd(30.1, 64.3, 12.5, 1.28)
+	pt3dadd(29.8, 64.2, 12.5, 1.12)
+	pt3dadd(26.8, 63.4, 12, 1.12)
+  }
+  dend_6[92] {pt3dclear()
+	pt3dadd(26.8, 63.4, 12, 1.12)
+	pt3dadd(26.5, 63.5, 12, 1.28)
+  }
+  dend_9[128] {pt3dclear()
+	pt3dadd(26.5, 63.5, 12, 1.28)
+	pt3dadd(26.7, 62.2, 12, 0.24)
+  }
+  dend_5[45] {pt3dclear()
+	pt3dadd(26.5, 63.5, 12, 1.28)
+	pt3dadd(26.2, 63.3, 12, 1.24)
+	pt3dadd(25.7, 63.4, 11.5, 1.04)
+  }
+  dend_6[93] {pt3dclear()
+	pt3dadd(25.7, 63.4, 11.5, 1.04)
+	pt3dadd(25.4, 63.2, 11.5, 1)
+  }
+  dend_9[129] {pt3dclear()
+	pt3dadd(25.4, 63.2, 11.5, 1)
+	pt3dadd(26.1, 60.8, 11.5, 0.24)
+  }
+  dend_9[130] {pt3dclear()
+	pt3dadd(25.4, 63.2, 11.5, 1)
+	pt3dadd(25, 60.8, 11.5, 0.5)
+  }
+  dend_5[46] {pt3dclear()
+	pt3dadd(25.4, 63.2, 11.5, 1)
+	pt3dadd(25, 63.1, 11, 0.76)
+	pt3dadd(23.7, 62.8, 11, 0.56)
+  }
+  dend_6[94] {pt3dclear()
+	pt3dadd(23.7, 62.8, 11, 0.56)
+	pt3dadd(23.3, 62.7, 11, 0.8)
+  }
+  dend_9[131] {pt3dclear()
+	pt3dadd(23.3, 62.7, 11, 0.8)
+	pt3dadd(23.3, 64.4, 11, 0.24)
+  }
+  dend_9[132] {pt3dclear()
+	pt3dadd(23.3, 62.7, 11, 0.8)
+	pt3dadd(22.9, 64.2, 11, 0.24)
+  }
+  dend_5[47] {pt3dclear()
+	pt3dadd(23.3, 62.7, 11, 0.8)
+	pt3dadd(23, 62.7, 11, 0.76)
+  }
+  dend_6[95] {pt3dclear()
+	pt3dadd(23, 62.7, 11, 0.76)
+	pt3dadd(22.7, 62.7, 10.5, 0.8)
+  }
+  dend_9[133] {pt3dclear()
+	pt3dadd(22.7, 62.7, 10.5, 0.8)
+	pt3dadd(22.9, 61.6, 10.5, 0.24)
+  }
+  dend_9[134] {pt3dclear()
+	pt3dadd(22.7, 62.7, 10.5, 0.8)
+	pt3dadd(22.7, 64.4, 10.5, 0.24)
+  }
+  dend_5[48] {pt3dclear()
+	pt3dadd(22.7, 62.7, 10.5, 0.8)
+	pt3dadd(22.3, 62.7, 10.5, 0.8)
+	pt3dadd(20.3, 62.5, 10, 0.8)
+  }
+  dend_6[96] {pt3dclear()
+	pt3dadd(20.3, 62.5, 10, 0.8)
+	pt3dadd(19.8, 62.3, 10, 0.76)
+  }
+  dend_9[135] {pt3dclear()
+	pt3dadd(19.8, 62.3, 10, 0.76)
+	pt3dadd(19.7, 63.9, 10, 0.36)
+  }
+  dend_5[49] {pt3dclear()
+	pt3dadd(19.8, 62.3, 10, 0.76)
+	pt3dadd(19.3, 62.4, 10.5, 0.56)
+	pt3dadd(17.3, 62, 11, 1.52)
+	pt3dadd(15.5, 61.7, 11, 0.8)
+	pt3dadd(12.9, 61.4, 12.5, 0.56)
+  }
+  dend_6[97] {pt3dclear()
+	pt3dadd(12.9, 61.4, 12.5, 0.56)
+	pt3dadd(12.5, 61.4, 12.5, 0.56)
+  }
+  dend_9[136] {pt3dclear()
+	pt3dadd(12.5, 61.4, 12.5, 0.56)
+	pt3dadd(11.8, 62.9, 12.5, 0.56)
+  }
+  dend_5[50] {pt3dclear()
+	pt3dadd(12.5, 61.4, 12.5, 0.56)
+	pt3dadd(12.1, 61.4, 12.5, 0.56)
+	pt3dadd(10.1, 61.2, 14.5, 0.56)
+  }
+  dend_7[3] {pt3dclear()
+	pt3dadd(10.1, 61.2, 14.5, 0.56)
+	pt3dadd(7.6, 61.4, 14.5, 0.5)
+  }
+  dend[4] {pt3dclear()
+	pt3dadd(99.7, 93.05, 8.5, 3.96)
+	pt3dadd(107.5, 89.5, 13.5, 3.96)
+	pt3dadd(108.6, 89, 13.5, 3.6)
+	pt3dadd(109.4, 88.5, 14.5, 3.4)
+  }
+  apic[46] {pt3dclear()
+	pt3dadd(109.4, 88.5, 14.5, 3.4)
+	pt3dadd(109.1, 86.8, 14.5, 0.76)
+	pt3dadd(109.5, 84.4, 13.5, 1.24)
+  }
+  dend_6[98] {pt3dclear()
+	pt3dadd(109.5, 84.4, 13.5, 1.24)
+	pt3dadd(109.7, 84.1, 12.5, 1.06)
+  }
+  dend_9[137] {pt3dclear()
+	pt3dadd(109.7, 84.1, 12.5, 1.06)
+	pt3dadd(110.5, 84.8, 12.5, 0.24)
+  }
+  apic[47] {pt3dclear()
+	pt3dadd(109.7, 84.1, 12.5, 1.06)
+	pt3dadd(109.9, 83.8, 12.5, 0.9)
+  }
+  dend_6[99] {pt3dclear()
+	pt3dadd(109.9, 83.8, 12.5, 0.9)
+	pt3dadd(110.1, 83.4, 12.5, 0.9)
+  }
+  dend_9[138] {pt3dclear()
+	pt3dadd(110.1, 83.4, 12.5, 0.9)
+	pt3dadd(107.2, 81.8, 12.5, 0.7)
+  }
+  apic[48] {pt3dclear()
+	pt3dadd(110.1, 83.4, 12.5, 0.9)
+  }
+}
+proc shape3d_5() {
+  apic[48] {	pt3dadd(110.2, 83.1, 12, 0.56)
+  }
+  dend_6[100] {pt3dclear()
+	pt3dadd(110.2, 83.1, 12, 0.56)
+	pt3dadd(110.4, 82.8, 12, 0.7)
+  }
+  dend_9[139] {pt3dclear()
+	pt3dadd(110.4, 82.8, 12, 0.7)
+	pt3dadd(111.1, 83.5, 12, 0.36)
+  }
+  apic[49] {pt3dclear()
+	pt3dadd(110.4, 82.8, 12, 0.7)
+	pt3dadd(110.8, 82.4, 11.5, 0.7)
+	pt3dadd(111.1, 81, 11, 0.76)
+	pt3dadd(110.9, 80.5, 10, 0.8)
+  }
+  dend_6[101] {pt3dclear()
+	pt3dadd(110.9, 80.5, 10, 0.8)
+	pt3dadd(110.8, 80.1, 10, 0.56)
+  }
+  dend_9[140] {pt3dclear()
+	pt3dadd(110.8, 80.1, 10, 0.56)
+	pt3dadd(110.3, 80.4, 9.5, 0.56)
+  }
+  apic[50] {pt3dclear()
+	pt3dadd(110.8, 80.1, 10, 0.56)
+	pt3dadd(110.7, 79.7, 9.5, 0.8)
+  }
+  dend_6[102] {pt3dclear()
+	pt3dadd(110.7, 79.7, 9.5, 0.8)
+	pt3dadd(110.3, 79.4, 9.5, 0.9)
+  }
+  dend_9[141] {pt3dclear()
+	pt3dadd(110.3, 79.4, 9.5, 0.9)
+	pt3dadd(109.5, 79.9, 9.5, 0.36)
+  }
+  dend_9[142] {pt3dclear()
+	pt3dadd(110.3, 79.4, 9.5, 0.9)
+	pt3dadd(111.8, 79.3, 8.5, 0.24)
+  }
+  apic[51] {pt3dclear()
+	pt3dadd(110.3, 79.4, 9.5, 0.9)
+	pt3dadd(110.4, 79, 9.5, 1)
+  }
+  dend_6[103] {pt3dclear()
+	pt3dadd(110.4, 79, 9.5, 1)
+	pt3dadd(110.7, 78.6, 9.5, 0.9)
+  }
+  dend_9[143] {pt3dclear()
+	pt3dadd(110.7, 78.6, 9.5, 0.9)
+	pt3dadd(109, 78, 9.5, 0.5)
+  }
+  apic[52] {pt3dclear()
+	pt3dadd(110.7, 78.6, 9.5, 0.9)
+	pt3dadd(110.9, 78.3, 9.5, 0.8)
+	pt3dadd(110.8, 77.5, 8.5, 0.56)
+	pt3dadd(111.3, 76.2, 8, 0.56)
+	pt3dadd(112, 75.8, 8, 0.7)
+  }
+  dend_6[104] {pt3dclear()
+	pt3dadd(112, 75.8, 8, 0.7)
+	pt3dadd(112.2, 75.6, 8, 0.7)
+  }
+  dend_9[144] {pt3dclear()
+	pt3dadd(112.2, 75.6, 8, 0.7)
+	pt3dadd(113.3, 77.1, 8, 0.36)
+  }
+  apic[53] {pt3dclear()
+	pt3dadd(112.2, 75.6, 8, 0.7)
+	pt3dadd(112.4, 75.4, 8, 0.7)
+	pt3dadd(112.6, 75, 7.5, 0.7)
+  }
+  dend_6[105] {pt3dclear()
+	pt3dadd(112.6, 75, 7.5, 0.7)
+	pt3dadd(112.8, 74.8, 7.5, 0.7)
+  }
+  dend_9[145] {pt3dclear()
+	pt3dadd(112.8, 74.8, 7.5, 0.7)
+	pt3dadd(111.8, 73.7, 7.5, 0.24)
+  }
+  apic[54] {pt3dclear()
+	pt3dadd(112.8, 74.8, 7.5, 0.7)
+	pt3dadd(113.1, 74.4, 7.5, 0.9)
+	pt3dadd(113.3, 74.1, 7, 0.36)
+  }
+  dend_6[106] {pt3dclear()
+	pt3dadd(113.3, 74.1, 7, 0.36)
+	pt3dadd(113.7, 73.8, 7, 0.56)
+  }
+  dend_9[146] {pt3dclear()
+	pt3dadd(113.7, 73.8, 7, 0.56)
+	pt3dadd(114.8, 75.1, 7, 0.56)
+  }
+  dend_9[147] {pt3dclear()
+	pt3dadd(113.7, 73.8, 7, 0.56)
+	pt3dadd(115.2, 74.3, 7, 0.24)
+  }
+  apic[55] {pt3dclear()
+	pt3dadd(113.7, 73.8, 7, 0.56)
+	pt3dadd(114.1, 73.6, 7, 0.56)
+  }
+  dend_6[107] {pt3dclear()
+	pt3dadd(114.1, 73.6, 7, 0.56)
+	pt3dadd(114.9, 72.8, 6, 0.56)
+  }
+  dend_9[148] {pt3dclear()
+	pt3dadd(114.9, 72.8, 6, 0.56)
+	pt3dadd(116.1, 73.5, 6, 0.36)
+  }
+  apic[56] {pt3dclear()
+	pt3dadd(114.9, 72.8, 6, 0.56)
+	pt3dadd(115.2, 72.3, 5.5, 0.56)
+  }
+  dend_6[108] {pt3dclear()
+	pt3dadd(115.2, 72.3, 5.5, 0.56)
+	pt3dadd(115.4, 71.9, 5.5, 0.56)
+  }
+  dend_9[149] {pt3dclear()
+	pt3dadd(115.4, 71.9, 5.5, 0.56)
+	pt3dadd(116.3, 72.3, 5.5, 0.36)
+  }
+  dend_9[150] {pt3dclear()
+	pt3dadd(115.4, 71.9, 5.5, 0.56)
+	pt3dadd(115.3, 71.1, 5, 0.36)
+  }
+  apic[57] {pt3dclear()
+	pt3dadd(115.4, 71.9, 5.5, 0.56)
+	pt3dadd(115.9, 71.2, 5, 0.56)
+  }
+  dend_6[109] {pt3dclear()
+	pt3dadd(115.9, 71.2, 5, 0.56)
+	pt3dadd(116.3, 70.9, 5, 0.36)
+  }
+  dend_9[151] {pt3dclear()
+	pt3dadd(116.3, 70.9, 5, 0.36)
+	pt3dadd(115.7, 70.3, 5, 0.36)
+  }
+  apic[58] {pt3dclear()
+	pt3dadd(116.3, 70.9, 5, 0.36)
+	pt3dadd(116.9, 70.8, 4.5, 0.56)
+	pt3dadd(119.3, 69.2, 4.5, 0.56)
+	pt3dadd(120.4, 68.3, 5, 0.76)
+  }
+  dend_6[110] {pt3dclear()
+	pt3dadd(120.4, 68.3, 5, 0.76)
+	pt3dadd(121.9, 68.2, 6, 0.56)
+  }
+  dend_9[152] {pt3dclear()
+	pt3dadd(121.9, 68.2, 6, 0.56)
+	pt3dadd(121.3, 67.3, 6.5, 0.36)
+  }
+  apic[59] {pt3dclear()
+	pt3dadd(121.9, 68.2, 6, 0.56)
+	pt3dadd(122.5, 67.9, 6, 0.8)
+  }
+  dend_6[111] {pt3dclear()
+	pt3dadd(122.5, 67.9, 6, 0.8)
+	pt3dadd(124.1, 67.4, 6.5, 0.56)
+  }
+  dend_9[153] {pt3dclear()
+	pt3dadd(124.1, 67.4, 6.5, 0.56)
+	pt3dadd(123.9, 66.4, 6.5, 0.24)
+  }
+  apic[60] {pt3dclear()
+	pt3dadd(124.1, 67.4, 6.5, 0.56)
+	pt3dadd(125.1, 67.1, 6.5, 0.8)
+  }
+  dend_6[112] {pt3dclear()
+	pt3dadd(125.1, 67.1, 6.5, 0.8)
+	pt3dadd(126.9, 66.5, 7, 0.8)
+  }
+  dend_9[154] {pt3dclear()
+	pt3dadd(126.9, 66.5, 7, 0.8)
+	pt3dadd(126.5, 65.6, 7.5, 0.24)
+  }
+  apic[61] {pt3dclear()
+	pt3dadd(126.9, 66.5, 7, 0.8)
+	pt3dadd(128.1, 66, 7, 0.56)
+  }
+  dend_6[113] {pt3dclear()
+	pt3dadd(128.1, 66, 7, 0.56)
+	pt3dadd(130.1, 65, 7, 0.56)
+  }
+  dend_9[155] {pt3dclear()
+	pt3dadd(130.1, 65, 7, 0.56)
+	pt3dadd(130.5, 65.8, 6.5, 0.24)
+  }
+  apic[62] {pt3dclear()
+	pt3dadd(130.1, 65, 7, 0.56)
+	pt3dadd(130.3, 64.8, 7, 0.56)
+  }
+  dend_6[114] {pt3dclear()
+	pt3dadd(130.3, 64.8, 7, 0.56)
+	pt3dadd(131.1, 64.5, 7, 0.8)
+  }
+  dend_9[156] {pt3dclear()
+	pt3dadd(131.1, 64.5, 7, 0.8)
+	pt3dadd(132.5, 66.7, 7, 0.36)
+  }
+  apic[63] {pt3dclear()
+	pt3dadd(131.1, 64.5, 7, 0.8)
+	pt3dadd(131.5, 64.3, 6.5, 0.36)
+  }
+  dend_6[115] {pt3dclear()
+	pt3dadd(131.5, 64.3, 6.5, 0.36)
+	pt3dadd(132, 63.9, 6.5, 0.56)
+  }
+  dend_9[157] {pt3dclear()
+	pt3dadd(132, 63.9, 6.5, 0.56)
+	pt3dadd(131.2, 63.1, 6.5, 0.56)
+  }
+  apic[64] {pt3dclear()
+	pt3dadd(132, 63.9, 6.5, 0.56)
+	pt3dadd(132.5, 63.6, 6.5, 0.56)
+  }
+  dend_6[116] {pt3dclear()
+	pt3dadd(132.5, 63.6, 6.5, 0.56)
+	pt3dadd(133.8, 62.8, 6, 0.7)
+  }
+  dend_9[158] {pt3dclear()
+	pt3dadd(133.8, 62.8, 6, 0.7)
+	pt3dadd(134.5, 63.5, 6, 0.36)
+  }
+  apic[65] {pt3dclear()
+	pt3dadd(133.8, 62.8, 6, 0.7)
+	pt3dadd(134.3, 62.3, 6, 0.36)
+  }
+  dend_6[117] {pt3dclear()
+	pt3dadd(134.3, 62.3, 6, 0.36)
+	pt3dadd(135.3, 60.9, 5.5, 0.36)
+  }
+  dend_9[159] {pt3dclear()
+	pt3dadd(135.3, 60.9, 5.5, 0.36)
+	pt3dadd(134.5, 59.8, 6, 0.24)
+  }
+  apic[66] {pt3dclear()
+	pt3dadd(135.3, 60.9, 5.5, 0.36)
+	pt3dadd(136.2, 59.5, 5.5, 0.56)
+	pt3dadd(137.6, 57.8, 4, 0.7)
+  }
+  dend_6[118] {pt3dclear()
+	pt3dadd(137.6, 57.8, 4, 0.7)
+	pt3dadd(138.6, 56.2, 3, 0.7)
+  }
+  dend_9[160] {pt3dclear()
+	pt3dadd(138.6, 56.2, 3, 0.7)
+	pt3dadd(138, 55.5, 3, 0.24)
+  }
+  apic[67] {pt3dclear()
+	pt3dadd(138.6, 56.2, 3, 0.7)
+	pt3dadd(139.7, 55.6, 3, 0.56)
+	pt3dadd(141.3, 55.2, 2.5, 0.56)
+	pt3dadd(142.5, 54.6, 2.5, 0.56)
+  }
+  dend_6[119] {pt3dclear()
+	pt3dadd(142.5, 54.6, 2.5, 0.56)
+	pt3dadd(143, 53.9, 2.5, 0.56)
+  }
+  dend_9[161] {pt3dclear()
+	pt3dadd(143, 53.9, 2.5, 0.56)
+	pt3dadd(143.9, 54.5, 3, 0.36)
+  }
+  apic[68] {pt3dclear()
+	pt3dadd(143, 53.9, 2.5, 0.56)
+	pt3dadd(143.2, 53.3, 3, 0.56)
+  }
+  dend_6[120] {pt3dclear()
+	pt3dadd(143.2, 53.3, 3, 0.56)
+	pt3dadd(143.5, 53, 3, 0.56)
+  }
+  dend_9[162] {pt3dclear()
+	pt3dadd(143.5, 53, 3, 0.56)
+	pt3dadd(144.3, 53.9, 3, 0.36)
+  }
+  apic[69] {pt3dclear()
+	pt3dadd(143.5, 53, 3, 0.56)
+	pt3dadd(143.8, 52.6, 3.5, 0.7)
+  }
+  dend_6[121] {pt3dclear()
+	pt3dadd(143.8, 52.6, 3.5, 0.7)
+	pt3dadd(144.6, 52, 4.5, 0.5)
+  }
+  dend_9[163] {pt3dclear()
+	pt3dadd(144.6, 52, 4.5, 0.5)
+	pt3dadd(144, 50.3, 4.5, 0.56)
+  }
+  dend_9[164] {pt3dclear()
+	pt3dadd(144.6, 52, 4.5, 0.5)
+	pt3dadd(145.9, 51.8, 5, 0.56)
+  }
+  dend_9[165] {pt3dclear()
+	pt3dadd(144.6, 52, 4.5, 0.5)
+	pt3dadd(146.4, 51.2, 6, 0.5)
+  }
+  dend_7[4] {pt3dclear()
+	pt3dadd(144.6, 52, 4.5, 0.5)
+	pt3dadd(146.1, 50.1, 6.5, 0.36)
+  }
+  apic[70] {pt3dclear()
+	pt3dadd(109.4, 88.5, 14.5, 3.4)
+	pt3dadd(111.6, 89.1, 16, 1.82)
+  }
+  dend_6[122] {pt3dclear()
+	pt3dadd(111.6, 89.1, 16, 1.82)
+	pt3dadd(114.7, 87.6, 18, 1.04)
+  }
+  dend_9[166] {pt3dclear()
+	pt3dadd(114.7, 87.6, 18, 1.04)
+	pt3dadd(115.1, 89.1, 18, 0.36)
+  }
+  apic[71] {pt3dclear()
+	pt3dadd(114.7, 87.6, 18, 1.04)
+	pt3dadd(115.5, 86.9, 18.5, 1.46)
+	pt3dadd(115.3, 87.1, 20.5, 1.46)
+  }
+  dend_6[123] {pt3dclear()
+	pt3dadd(115.3, 87.1, 20.5, 1.46)
+	pt3dadd(116.6, 86.2, 20.5, 1.12)
+  }
+  dend_9[167] {pt3dclear()
+	pt3dadd(116.6, 86.2, 20.5, 1.12)
+	pt3dadd(117.4, 87.9, 20.5, 0.56)
+  }
+  apic[72] {pt3dclear()
+	pt3dadd(116.6, 86.2, 20.5, 1.12)
+	pt3dadd(117, 86, 20.5, 1.12)
+  }
+  dend_9[168] {pt3dclear()
+	pt3dadd(117, 86, 20.5, 1.12)
+	pt3dadd(116.3, 84.7, 20.5, 0.36)
+  }
+  dend_6[124] {pt3dclear()
+	pt3dadd(117, 86, 20.5, 1.12)
+	pt3dadd(119.5, 84.5, 21.5, 0.8)
+  }
+  dend_9[169] {pt3dclear()
+	pt3dadd(119.5, 84.5, 21.5, 0.8)
+	pt3dadd(119.8, 85.7, 21.5, 0.56)
+  }
+  apic[73] {pt3dclear()
+	pt3dadd(119.5, 84.5, 21.5, 0.8)
+	pt3dadd(120.1, 84.3, 21.5, 0.8)
+  }
+  dend_6[125] {pt3dclear()
+	pt3dadd(120.1, 84.3, 21.5, 0.8)
+	pt3dadd(121.1, 84.3, 22.5, 0.8)
+  }
+  dend_9[170] {pt3dclear()
+	pt3dadd(121.1, 84.3, 22.5, 0.8)
+	pt3dadd(120.4, 82.6, 22.5, 0.5)
+  }
+  apic[74] {pt3dclear()
+	pt3dadd(121.1, 84.3, 22.5, 0.8)
+	pt3dadd(122.4, 84.1, 22.5, 0.76)
+  }
+  dend_6[126] {pt3dclear()
+	pt3dadd(122.4, 84.1, 22.5, 0.76)
+	pt3dadd(123.8, 84.1, 23, 0.76)
+  }
+  dend_9[171] {pt3dclear()
+	pt3dadd(123.8, 84.1, 23, 0.76)
+	pt3dadd(123.7, 83.7, 22, 0.36)
+  }
+  apic[75] {pt3dclear()
+	pt3dadd(123.8, 84.1, 23, 0.76)
+	pt3dadd(124.9, 83.7, 23.5, 0.8)
+  }
+  dend_6[127] {pt3dclear()
+	pt3dadd(124.9, 83.7, 23.5, 0.8)
+	pt3dadd(125.7, 83.3, 24, 0.8)
+  }
+  dend_9[172] {pt3dclear()
+	pt3dadd(125.7, 83.3, 24, 0.8)
+	pt3dadd(126.1, 84.2, 24, 0.24)
+  }
+  apic[76] {pt3dclear()
+	pt3dadd(125.7, 83.3, 24, 0.8)
+	pt3dadd(126.3, 83, 24, 0.56)
+  }
+  dend_6[128] {pt3dclear()
+	pt3dadd(126.3, 83, 24, 0.56)
+	pt3dadd(126.9, 82.9, 24, 0.8)
+  }
+  dend_9[173] {pt3dclear()
+	pt3dadd(126.9, 82.9, 24, 0.8)
+	pt3dadd(126.6, 81.8, 24, 0.5)
+  }
+}
+proc shape3d_6() {
+  dend_9[173] {  }
+  apic[77] {pt3dclear()
+	pt3dadd(126.9, 82.9, 24, 0.8)
+	pt3dadd(127.7, 82.5, 24, 0.8)
+  }
+  dend_6[129] {pt3dclear()
+	pt3dadd(127.7, 82.5, 24, 0.8)
+	pt3dadd(128.9, 81.7, 24.5, 0.8)
+  }
+  dend_9[174] {pt3dclear()
+	pt3dadd(128.9, 81.7, 24.5, 0.8)
+	pt3dadd(129.4, 83.4, 25.5, 0.5)
+  }
+  apic[78] {pt3dclear()
+	pt3dadd(128.9, 81.7, 24.5, 0.8)
+	pt3dadd(129.4, 81.7, 24.5, 0.76)
+  }
+  dend_6[130] {pt3dclear()
+	pt3dadd(129.4, 81.7, 24.5, 0.76)
+	pt3dadd(129.9, 81.7, 24.5, 0.8)
+  }
+  dend_9[175] {pt3dclear()
+	pt3dadd(129.9, 81.7, 24.5, 0.8)
+	pt3dadd(130.3, 82.8, 24.5, 0.24)
+  }
+  dend_9[176] {pt3dclear()
+	pt3dadd(129.9, 81.7, 24.5, 0.8)
+	pt3dadd(129.5, 80.6, 24.5, 0.24)
+  }
+  apic[79] {pt3dclear()
+	pt3dadd(129.9, 81.7, 24.5, 0.8)
+	pt3dadd(130.1, 81.7, 24.5, 0.8)
+  }
+  dend_6[131] {pt3dclear()
+	pt3dadd(130.1, 81.7, 24.5, 0.8)
+	pt3dadd(130.7, 81.5, 25, 0.8)
+  }
+  dend_9[177] {pt3dclear()
+	pt3dadd(130.7, 81.5, 25, 0.8)
+	pt3dadd(131.1, 82.3, 25, 0.36)
+  }
+  apic[80] {pt3dclear()
+	pt3dadd(130.7, 81.5, 25, 0.8)
+	pt3dadd(131.1, 81.3, 25, 0.8)
+  }
+  dend_6[132] {pt3dclear()
+	pt3dadd(131.1, 81.3, 25, 0.8)
+	pt3dadd(132.7, 80.9, 25, 0.8)
+  }
+  dend_9[178] {pt3dclear()
+	pt3dadd(132.7, 80.9, 25, 0.8)
+	pt3dadd(133.1, 82, 25, 0.24)
+  }
+  dend_9[179] {pt3dclear()
+	pt3dadd(132.7, 80.9, 25, 0.8)
+	pt3dadd(132.3, 79.6, 25, 0.24)
+  }
+  apic[81] {pt3dclear()
+	pt3dadd(132.7, 80.9, 25, 0.8)
+	pt3dadd(133.5, 80.7, 25, 0.8)
+	pt3dadd(134.8, 80.8, 25.5, 1)
+	pt3dadd(136.8, 80.8, 25.5, 1)
+  }
+  dend_6[133] {pt3dclear()
+	pt3dadd(136.8, 80.8, 25.5, 1)
+	pt3dadd(137.8, 80.9, 25.5, 0.76)
+  }
+  dend_9[180] {pt3dclear()
+	pt3dadd(137.8, 80.9, 25.5, 0.76)
+	pt3dadd(137.4, 82.4, 25, 0.5)
+  }
+  dend_9[181] {pt3dclear()
+	pt3dadd(137.8, 80.9, 25.5, 0.76)
+	pt3dadd(138.1, 81.7, 25, 0.36)
+  }
+  apic[82] {pt3dclear()
+	pt3dadd(137.8, 80.9, 25.5, 0.76)
+	pt3dadd(138.7, 80.7, 25.5, 0.8)
+	pt3dadd(140.4, 80.6, 25.5, 0.5)
+  }
+  dend_6[134] {pt3dclear()
+	pt3dadd(140.4, 80.6, 25.5, 0.5)
+	pt3dadd(141, 80.7, 25.5, 0.76)
+  }
+  dend_9[182] {pt3dclear()
+	pt3dadd(141, 80.7, 25.5, 0.76)
+	pt3dadd(141.2, 79.6, 25.5, 0.5)
+  }
+  apic[83] {pt3dclear()
+	pt3dadd(141, 80.7, 25.5, 0.76)
+	pt3dadd(141.5, 80.8, 25.5, 1.04)
+  }
+  dend_6[135] {pt3dclear()
+	pt3dadd(141.5, 80.8, 25.5, 1.04)
+	pt3dadd(142.9, 80.8, 25.5, 1.04)
+  }
+  dend_9[183] {pt3dclear()
+	pt3dadd(142.9, 80.8, 25.5, 1.04)
+	pt3dadd(142.9, 79.8, 25.5, 0.24)
+  }
+  dend_9[184] {pt3dclear()
+	pt3dadd(142.9, 80.8, 25.5, 1.04)
+	pt3dadd(143.3, 81.9, 25.5, 0.36)
+  }
+  apic[84] {pt3dclear()
+	pt3dadd(142.9, 80.8, 25.5, 1.04)
+	pt3dadd(143.8, 81.1, 25.5, 0.76)
+	pt3dadd(145.9, 81.1, 25.5, 0.8)
+  }
+  dend_7[5] {pt3dclear()
+	pt3dadd(145.9, 81.1, 25.5, 0.8)
+	pt3dadd(146.6, 80.3, 25.5, 0.56)
+  }
+  axon {pt3dclear()
+	pt3dadd(104.1, 95.3, 8.5, 0.7)
+	pt3dadd(104.4, 97, 4, 0.7)
+	pt3dadd(105.1, 97.8, 4, 0.56)
+	pt3dadd(106.3, 99.4, 4, 0.56)
+	pt3dadd(107.5, 102.5, 3.5, 0.36)
+	pt3dadd(107, 104.9, 3.5, 0.56)
+	pt3dadd(105.6, 107.9, 3, 0.56)
+	pt3dadd(106.1, 109.2, 3, 0.56)
+  }
+  dend[5] {pt3dclear()
+	pt3dadd(97.325, 91.75, 8.5, 1.4)
+	pt3dadd(98.4, 100.6, 2, 1.4)
+	pt3dadd(98.6, 103.8, 2, 1)
+	pt3dadd(99.3, 104.7, 2, 1.46)
+  }
+  dend_6[136] {pt3dclear()
+	pt3dadd(99.3, 104.7, 2, 1.46)
+	pt3dadd(99.6, 105.5, 2, 1.04)
+  }
+  dend_9[185] {pt3dclear()
+	pt3dadd(99.6, 105.5, 2, 1.04)
+	pt3dadd(98, 105.9, 2, 0.24)
+  }
+  dend[6] {pt3dclear()
+	pt3dadd(99.6, 105.5, 2, 1.04)
+	pt3dadd(99.7, 106.7, 2, 0.8)
+	pt3dadd(99.1, 108.3, 2, 0.8)
+  }
+  dend_6[137] {pt3dclear()
+	pt3dadd(99.1, 108.3, 2, 0.8)
+	pt3dadd(98.8, 109.4, 3, 1.8)
+  }
+  dend_9[186] {pt3dclear()
+	pt3dadd(98.8, 109.4, 3, 1.8)
+	pt3dadd(97.6, 107.6, 4, 0.5)
+  }
+  dend[7] {pt3dclear()
+	pt3dadd(98.8, 109.4, 3, 1.8)
+	pt3dadd(98.4, 110, 3, 1.42)
+  }
+  dend_6[138] {pt3dclear()
+	pt3dadd(98.4, 110, 3, 1.42)
+	pt3dadd(98.5, 110.7, 4.5, 1.28)
+  }
+  dend_9[187] {pt3dclear()
+	pt3dadd(98.5, 110.7, 4.5, 1.28)
+	pt3dadd(96.8, 110.6, 5.5, 0.5)
+  }
+  dend[8] {pt3dclear()
+	pt3dadd(98.5, 110.7, 4.5, 1.28)
+	pt3dadd(98.2, 111.2, 5.5, 1)
+  }
+  dend_6[139] {pt3dclear()
+	pt3dadd(98.2, 111.2, 5.5, 1)
+	pt3dadd(98.3, 113.1, 5.5, 1.28)
+  }
+  dend_9[188] {pt3dclear()
+	pt3dadd(98.3, 113.1, 5.5, 1.28)
+	pt3dadd(99.6, 113.1, 5.5, 0.24)
+  }
+  dend[9] {pt3dclear()
+	pt3dadd(98.3, 113.1, 5.5, 1.28)
+	pt3dadd(98.2, 113.9, 5.5, 1.04)
+	pt3dadd(98.2, 114.9, 7, 1.04)
+  }
+  dend_6[140] {pt3dclear()
+	pt3dadd(98.2, 114.9, 7, 1.04)
+	pt3dadd(98, 115.9, 7, 1.24)
+  }
+  apic[85] {pt3dclear()
+	pt3dadd(98, 115.9, 7, 1.24)
+	pt3dadd(96.7, 115.7, 7, 0.8)
+	pt3dadd(95.2, 115.7, 7, 0.76)
+  }
+  dend_6[141] {pt3dclear()
+	pt3dadd(95.2, 115.7, 7, 0.76)
+	pt3dadd(92.6, 116.9, 7.5, 0.9)
+  }
+  dend_9[189] {pt3dclear()
+	pt3dadd(92.6, 116.9, 7.5, 0.9)
+	pt3dadd(93.5, 118.1, 7.5, 0.36)
+  }
+  apic[86] {pt3dclear()
+	pt3dadd(92.6, 116.9, 7.5, 0.9)
+	pt3dadd(92, 117.1, 7.5, 0.9)
+	pt3dadd(90.9, 118, 7, 0.56)
+  }
+  dend_6[142] {pt3dclear()
+	pt3dadd(90.9, 118, 7, 0.56)
+	pt3dadd(89.9, 118.3, 8, 0.8)
+  }
+  dend_9[190] {pt3dclear()
+	pt3dadd(89.9, 118.3, 8, 0.8)
+	pt3dadd(90.7, 119.5, 8, 0.36)
+  }
+  apic[87] {pt3dclear()
+	pt3dadd(89.9, 118.3, 8, 0.8)
+	pt3dadd(89.4, 118.7, 8, 0.76)
+  }
+  dend_6[143] {pt3dclear()
+	pt3dadd(89.4, 118.7, 8, 0.76)
+	pt3dadd(88, 119.3, 8, 0.9)
+  }
+  dend_9[191] {pt3dclear()
+	pt3dadd(88, 119.3, 8, 0.9)
+	pt3dadd(88.5, 120.5, 8, 0.36)
+  }
+  dend_9[192] {pt3dclear()
+	pt3dadd(88, 119.3, 8, 0.9)
+	pt3dadd(89, 118.9, 7, 0.24)
+  }
+  dend_9[193] {pt3dclear()
+	pt3dadd(88, 119.3, 8, 0.9)
+	pt3dadd(87.5, 118.7, 7, 0.36)
+  }
+  apic[88] {pt3dclear()
+	pt3dadd(88, 119.3, 8, 0.9)
+	pt3dadd(87.4, 119.7, 7.5, 0.9)
+  }
+  dend_6[144] {pt3dclear()
+	pt3dadd(87.4, 119.7, 7.5, 0.9)
+	pt3dadd(86.9, 120.1, 7, 0.8)
+  }
+  dend_9[194] {pt3dclear()
+	pt3dadd(86.9, 120.1, 7, 0.8)
+	pt3dadd(87.7, 121.1, 7, 0.36)
+  }
+  apic[89] {pt3dclear()
+	pt3dadd(86.9, 120.1, 7, 0.8)
+	pt3dadd(86.7, 120.2, 7.5, 0.56)
+  }
+  dend_6[145] {pt3dclear()
+	pt3dadd(86.7, 120.2, 7.5, 0.56)
+	pt3dadd(86.5, 120.3, 7.5, 0.8)
+  }
+  dend_9[195] {pt3dclear()
+	pt3dadd(86.5, 120.3, 7.5, 0.8)
+	pt3dadd(87.1, 121.3, 7.5, 0.36)
+  }
+  dend_9[196] {pt3dclear()
+	pt3dadd(86.5, 120.3, 7.5, 0.8)
+	pt3dadd(85.9, 119.1, 7.5, 0.36)
+  }
+  apic[90] {pt3dclear()
+	pt3dadd(86.5, 120.3, 7.5, 0.8)
+	pt3dadd(86, 120.7, 7.5, 1.34)
+  }
+  dend_6[146] {pt3dclear()
+	pt3dadd(86, 120.7, 7.5, 1.34)
+	pt3dadd(85, 121.2, 7.5, 1.12)
+  }
+  dend_9[197] {pt3dclear()
+	pt3dadd(85, 121.2, 7.5, 1.12)
+	pt3dadd(85.8, 122.5, 7.5, 0.56)
+  }
+  apic[91] {pt3dclear()
+	pt3dadd(85, 121.2, 7.5, 1.12)
+	pt3dadd(83.9, 122.1, 7, 0.8)
+  }
+  dend_6[147] {pt3dclear()
+	pt3dadd(83.9, 122.1, 7, 0.8)
+	pt3dadd(82.7, 122.5, 7.5, 0.8)
+  }
+  dend_9[198] {pt3dclear()
+	pt3dadd(83.9, 122.1, 7, 0.8)
+	pt3dadd(82.6, 123.8, 8, 0.5)
+  }
+  dend_9[199] {pt3dclear()
+	pt3dadd(83.9, 122.1, 7, 0.8)
+	pt3dadd(82.5, 121.5, 7, 0.36)
+  }
+  apic[92] {pt3dclear()
+	pt3dadd(83.9, 122.1, 7, 0.8)
+	pt3dadd(82.3, 122.8, 7.5, 0.56)
+  }
+  dend_6[148] {pt3dclear()
+	pt3dadd(82.3, 122.8, 7.5, 0.56)
+	pt3dadd(80.7, 123.6, 8, 0.56)
+  }
+  dend_9[200] {pt3dclear()
+	pt3dadd(80.7, 123.6, 8, 0.56)
+	pt3dadd(79.8, 121.3, 7.5, 0.56)
+  }
+  dend[10] {pt3dclear()
+	pt3dadd(80.7, 123.6, 8, 0.56)
+	pt3dadd(78.6, 124.7, 7.5, 0.9)
+  }
+  dend_6[149] {pt3dclear()
+	pt3dadd(78.6, 124.7, 7.5, 0.9)
+	pt3dadd(77.8, 124.6, 7.5, 1)
+  }
+  dend_9[201] {pt3dclear()
+	pt3dadd(77.8, 124.6, 7.5, 1)
+	pt3dadd(78.6, 126.9, 7.5, 0.56)
+  }
+  dend_9[202] {pt3dclear()
+	pt3dadd(77.8, 124.6, 7.5, 1)
+	pt3dadd(77.6, 127, 7.5, 0.5)
+  }
+  apic[93] {pt3dclear()
+	pt3dadd(77.8, 124.6, 7.5, 1)
+	pt3dadd(77, 124.7, 7.5, 1.24)
+  }
+  dend_6[150] {pt3dclear()
+	pt3dadd(77, 124.7, 7.5, 1.24)
+	pt3dadd(73.7, 125.4, 7.5, 1.04)
+  }
+  dend_9[203] {pt3dclear()
+	pt3dadd(73.7, 125.4, 7.5, 1.04)
+	pt3dadd(73.8, 126.9, 7.5, 0.56)
+  }
+  dend_9[204] {pt3dclear()
+	pt3dadd(73.7, 125.4, 7.5, 1.04)
+	pt3dadd(71.9, 126.2, 7.5, 0.56)
+  }
+  dend_7[6] {pt3dclear()
+	pt3dadd(73.7, 125.4, 7.5, 1.04)
+	pt3dadd(71.2, 124.6, 7.5, 1.12)
+  }
+  apic[94] {pt3dclear()
+	pt3dadd(98, 115.9, 7, 1.24)
+	pt3dadd(98.4, 116.9, 7, 1.04)
+	pt3dadd(98.6, 118.1, 7, 1.04)
+  }
+  dend_6[151] {pt3dclear()
+	pt3dadd(98.6, 118.1, 7, 1.04)
+	pt3dadd(98.8, 118.5, 7, 1.04)
+  }
+  dend_9[205] {pt3dclear()
+	pt3dadd(98.8, 118.5, 7, 1.04)
+	pt3dadd(100.2, 117.9, 8, 0.24)
+  }
+  apic[95] {pt3dclear()
+	pt3dadd(98.8, 118.5, 7, 1.04)
+	pt3dadd(98.9, 119.4, 7, 1.34)
+  }
+  dend_6[152] {pt3dclear()
+	pt3dadd(98.9, 119.4, 7, 1.34)
+	pt3dadd(99.5, 120.5, 7, 0.8)
+  }
+  dend_9[206] {pt3dclear()
+	pt3dadd(98.9, 119.4, 7, 1.34)
+	pt3dadd(98.4, 121.1, 7, 0.24)
+  }
+  apic[96] {pt3dclear()
+	pt3dadd(98.9, 119.4, 7, 1.34)
+	pt3dadd(99.6, 121.2, 7, 1.12)
+  }
+  dend_6[153] {pt3dclear()
+	pt3dadd(99.6, 121.2, 7, 1.12)
+	pt3dadd(100, 122.2, 7, 1.12)
+  }
+  dend_9[207] {pt3dclear()
+	pt3dadd(100, 122.2, 7, 1.12)
+	pt3dadd(101, 121.7, 7, 0.24)
+  }
+  apic[97] {pt3dclear()
+	pt3dadd(100, 122.2, 7, 1.12)
+	pt3dadd(100.2, 123.6, 7.5, 1.12)
+	pt3dadd(100.6, 127.3, 7.5, 1.04)
+  }
+  dend_6[154] {pt3dclear()
+	pt3dadd(100.6, 127.3, 7.5, 1.04)
+	pt3dadd(100.6, 127.8, 7.5, 1.12)
+  }
+  dend_9[208] {pt3dclear()
+	pt3dadd(100.6, 127.8, 7.5, 1.12)
+	pt3dadd(101.8, 127.3, 7.5, 0.24)
+  }
+}
+proc shape3d_7() {
+  dend_9[208] {  }
+  apic[98] {pt3dclear()
+	pt3dadd(100.6, 127.8, 7.5, 1.12)
+	pt3dadd(101.2, 128.6, 7.5, 1.12)
+	pt3dadd(101.1, 130.4, 8.5, 0.76)
+  }
+  dend_6[155] {pt3dclear()
+	pt3dadd(101.1, 130.4, 8.5, 0.76)
+	pt3dadd(100.4, 133.1, 8.5, 0.56)
+  }
+  dend_9[209] {pt3dclear()
+	pt3dadd(100.4, 133.1, 8.5, 0.56)
+	pt3dadd(99.5, 132.5, 7.5, 0.36)
+  }
+  apic[99] {pt3dclear()
+	pt3dadd(100.4, 133.1, 8.5, 0.56)
+	pt3dadd(100.5, 135.9, 8, 0.8)
+  }
+  dend_6[156] {pt3dclear()
+	pt3dadd(100.5, 135.9, 8, 0.8)
+	pt3dadd(100.3, 136.7, 8, 0.8)
+  }
+  dend_9[210] {pt3dclear()
+	pt3dadd(100.3, 136.7, 8, 0.8)
+	pt3dadd(101.5, 136.8, 8, 0.56)
+  }
+  dend_9[211] {pt3dclear()
+	pt3dadd(100.3, 136.7, 8, 0.8)
+	pt3dadd(99.1, 136.1, 8, 0.36)
+  }
+  apic[100] {pt3dclear()
+	pt3dadd(100.3, 136.7, 8, 0.8)
+	pt3dadd(100.6, 137.7, 8, 1.24)
+  }
+  dend_6[157] {pt3dclear()
+	pt3dadd(100.6, 137.7, 8, 1.24)
+	pt3dadd(100.7, 140.4, 8.5, 0.76)
+  }
+  dend_9[212] {pt3dclear()
+	pt3dadd(100.7, 140.4, 8.5, 0.76)
+	pt3dadd(101.8, 140.4, 8, 0.5)
+  }
+  apic[101] {pt3dclear()
+	pt3dadd(100.7, 140.4, 8.5, 0.76)
+	pt3dadd(100.7, 141.4, 8.5, 0.76)
+  }
+  dend_6[158] {pt3dclear()
+	pt3dadd(100.7, 141.4, 8.5, 0.76)
+	pt3dadd(100.7, 141.8, 8.5, 0.76)
+  }
+  dend_9[213] {pt3dclear()
+	pt3dadd(100.7, 141.8, 8.5, 0.76)
+	pt3dadd(99.3, 141.7, 8.5, 0.36)
+  }
+  dend_9[214] {pt3dclear()
+	pt3dadd(100.7, 141.8, 8.5, 0.76)
+	pt3dadd(101.7, 142.1, 8.5, 0.36)
+  }
+  apic[102] {pt3dclear()
+	pt3dadd(100.7, 141.8, 8.5, 0.76)
+	pt3dadd(100.7, 142.8, 8.5, 0.76)
+	pt3dadd(100, 146.5, 9, 0.56)
+  }
+  dend_6[159] {pt3dclear()
+	pt3dadd(100, 146.5, 9, 0.56)
+	pt3dadd(99.7, 147.4, 9, 0.76)
+  }
+  dend_9[215] {pt3dclear()
+	pt3dadd(99.7, 147.4, 9, 0.76)
+	pt3dadd(98.4, 147.6, 9.5, 0.5)
+  }
+  dend_7[7] {pt3dclear()
+	pt3dadd(99.7, 147.4, 9, 0.76)
+	pt3dadd(99.4, 149.4, 9.5, 0.5)
+  }
+}
+proc basic_shape() {
+  shape3d_1()
+  shape3d_2()
+  shape3d_3()
+  shape3d_4()
+  shape3d_5()
+  shape3d_6()
+  shape3d_7()
+}
+proc geom() {
+}
+proc geom_nseg() {
+}
+access soma
+
+celldef()
